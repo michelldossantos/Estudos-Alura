@@ -6,3 +6,11 @@ let pessoa: Pessoa = ("Michel", 31, false)
 let (_, idade ,_) = pessoa
 
 print(idade)
+
+struct ContaCorrente {
+    var saldo: Double = 0.0
+    
+    mutating func adicionarSaldo(valor: Double) {
+        saldo = -valor
+    }
+}
