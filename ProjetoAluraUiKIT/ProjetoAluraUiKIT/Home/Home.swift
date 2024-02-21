@@ -25,6 +25,7 @@ class TestViewController: UIViewController, LoadViewController {
         button.backgroundColor = .init(named: "BackgraundButton")
         button.layer.cornerRadius = 16
         button.setTitle("Iniciar Quiz", for: .normal)
+        button.addTarget(self, action: #selector(iniciarQuiz), for: .touchUpInside)
         
         return button
     }()
@@ -53,6 +54,10 @@ class TestViewController: UIViewController, LoadViewController {
     func setupLayout() {
         view.addSubview(imageView)
         view.addSubview(button)
+    }
+    
+    @objc func iniciarQuiz() {
+        print("Tap Button")
     }
 }
 
