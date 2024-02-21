@@ -4,10 +4,8 @@
 //
 //  Created by Michel Santos on 20/02/24.
 //
-
 import UIKit
 import SnapKit
-
 
 protocol LoadViewController{
     func makeConstrants()
@@ -24,7 +22,9 @@ class TestViewController: UIViewController, LoadViewController {
     
     lazy var button: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .red
+        button.backgroundColor = .init(named: "BackgraundButton")
+        button.layer.cornerRadius = 16
+        button.setTitle("Iniciar Quiz", for: .normal)
         
         return button
     }()
