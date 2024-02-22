@@ -17,8 +17,9 @@ enum QuizButtonType: Int {
 
 
 class QuizViewController: UIViewController, LoadViewController {
-    let questions: [Question] = [.init(title: "Test for questions eqweqw qweqw qw eqwe qw qweq we", awnsers: ["one", "two", "three"], rightAnswer: 2)]
+    let questions: [Question] = [.init(title: "Test for questions eqweqw qweqw qw eqwe qw qweq we", awnsers: ["one", "two", "three"], rightAnswer: 2), .init(title: "OutherQuestion", awnsers: ["lalalal", "blaablaa", "lolls"], rightAnswer: 3)]
     var points = 0
+    var numberOfQuestion = 0
     
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
@@ -68,6 +69,7 @@ class QuizViewController: UIViewController, LoadViewController {
         view.backgroundColor = .init(named: "Backgraund00")
         setupLayout()
         makeConstrants()
+        showQuestion()
     }
     
     func makeConstrants() {
@@ -107,10 +109,24 @@ class QuizViewController: UIViewController, LoadViewController {
         view.addSubview(questionTwobutton)
         view.addSubview(questionThreebutton)
         
-        questionLabel.text = questions[0].title
-        questionOnebutton.setTitle(questions[0].awnsers[0], for: .normal)
-        questionTwobutton.setTitle(questions[0].awnsers[1], for: .normal)
-        questionThreebutton.setTitle(questions[0].awnsers[2], for: .normal)
+
+    }
+    
+    private func showQuestion() {
+        questionOnebutton.backgroundColor = .init(named: "BackgraundButton")
+        questionTwobutton.backgroundColor = .init(named: "BackgraundButton")
+        questionThreebutton.backgroundColor = .init(named: "BackgraundButton")
+
+
+        if numberOfQuestion <= (questions.count - 1) {
+            questionLabel.text = questions[numberOfQuestion].title
+            questionOnebutton.setTitle(questions[numberOfQuestion].awnsers[0], for: .normal)
+            questionTwobutton.setTitle(questions[numberOfQuestion].awnsers[1], for: .normal)
+            questionThreebutton.setTitle(questions[numberOfQuestion].awnsers[2], for: .normal)
+            
+            numberOfQuestion += 1
+        }
+
     }
 }
 
@@ -123,11 +139,14 @@ private extension QuizViewController {
         if tagDoBotao == questions[0].rightAnswer {
             print("right answer")
             points += 1
+            sender.backgroundColor = .init(named: "BackgraundButtonAnswerRight")
         } else {
             print("wrong answer")
+            sender.backgroundColor = .init(named: "BackgraundButtonAnswerWrong")
         }
         
         print("Total Points= \(points)")
+        showQuestion()
     }
 }
 
