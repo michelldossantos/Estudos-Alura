@@ -48,6 +48,7 @@ class TestViewController: UIViewController, LoadViewController {
         button.snp.makeConstraints { make in
             make.trailing.leading.equalToSuperview().inset(62)
             make.top.equalTo(imageView.snp.bottom).offset(42)
+            make.height.equalTo(62)
         }
     }
     
