@@ -151,6 +151,8 @@ private extension QuizViewController {
                                  selector: #selector(showQuestion),
                                  userInfo: nil,
                                  repeats: false)
+        } else {
+            self.navigationController?.pushViewController(ScoreViewController(points: points), animated: true)
         }
     }
 }
