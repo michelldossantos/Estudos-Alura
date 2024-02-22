@@ -17,6 +17,9 @@ enum QuizButtonType: Int {
 
 
 class QuizViewController: UIViewController, LoadViewController {
+    let questions: [Question] = [.init(title: "Test for questions eqweqw qweqw qw eqwe qw qweq we", awnsers: ["one", "two", "three"], rightAnswer: 2)]
+    var points = 0
+    
     private lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.text = "Teste de Label"
@@ -103,6 +106,11 @@ class QuizViewController: UIViewController, LoadViewController {
         view.addSubview(questionOnebutton)
         view.addSubview(questionTwobutton)
         view.addSubview(questionThreebutton)
+        
+        questionLabel.text = questions[0].title
+        questionOnebutton.setTitle(questions[0].awnsers[0], for: .normal)
+        questionTwobutton.setTitle(questions[0].awnsers[1], for: .normal)
+        questionThreebutton.setTitle(questions[0].awnsers[2], for: .normal)
     }
 }
 
@@ -111,6 +119,15 @@ private extension QuizViewController {
     @objc func botaoPressionado(sender: UIButton) {
         let tagDoBotao = sender.tag
         print("The button with tag \(tagDoBotao) was pressed.")
+        
+        if tagDoBotao == questions[0].rightAnswer {
+            print("right answer")
+            points += 1
+        } else {
+            print("wrong answer")
+        }
+        
+        print("Total Points= \(points)")
     }
 }
 
