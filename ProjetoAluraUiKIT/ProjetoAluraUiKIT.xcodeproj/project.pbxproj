@@ -13,6 +13,7 @@
 		0A635B862B84CFEF00F079A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A635B842B84CFEF00F079A3 /* LaunchScreen.storyboard */; };
 		0A635B902B852E9E00F079A3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635B8F2B852E9E00F079A3 /* Home.swift */; };
 		0A635B932B85328900F079A3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0A635B922B85328900F079A3 /* SnapKit */; };
+		0A635B9A2B8681CA00F079A3 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635B992B8681CA00F079A3 /* QuizViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		0A635B852B84CFEF00F079A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A635B872B84CFEF00F079A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A635B8F2B852E9E00F079A3 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		0A635B992B8681CA00F079A3 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		0A635B782B84CFED00F079A3 /* ProjetoAluraUiKIT */ = {
 			isa = PBXGroup;
 			children = (
+				0A635B972B86807B00F079A3 /* Quiz */,
 				0A635B962B8537C600F079A3 /* Home */,
 				0A635B792B84CFED00F079A3 /* AppDelegate.swift */,
 				0A635B7B2B84CFED00F079A3 /* SceneDelegate.swift */,
@@ -72,6 +75,14 @@
 				0A635B8F2B852E9E00F079A3 /* Home.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0A635B972B86807B00F079A3 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				0A635B992B8681CA00F079A3 /* QuizViewController.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 				0A635B7A2B84CFED00F079A3 /* AppDelegate.swift in Sources */,
 				0A635B902B852E9E00F079A3 /* Home.swift in Sources */,
 				0A635B7C2B84CFED00F079A3 /* SceneDelegate.swift in Sources */,
+				0A635B9A2B8681CA00F079A3 /* QuizViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

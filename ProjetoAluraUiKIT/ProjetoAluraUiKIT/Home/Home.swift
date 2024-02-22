@@ -57,7 +57,8 @@ class TestViewController: UIViewController, LoadViewController {
     }
     
     @objc func iniciarQuiz() {
-        print("Tap Button")
+//        self.present(QuizViewController(), animated: true)
+        self.navigationController?.pushViewController(QuizViewController(), animated: true)
     }
 }
 
