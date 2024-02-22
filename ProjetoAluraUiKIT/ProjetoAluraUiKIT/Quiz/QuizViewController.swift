@@ -9,6 +9,12 @@ import Foundation
 import UIKit
 import SnapKit
 
+enum QuizButtonType: Int {
+    case optionOne = 1
+    case optionTwo = 2
+    case optionThree = 3
+}
+
 
 class QuizViewController: UIViewController, LoadViewController {
     private lazy var questionLabel: UILabel = {
@@ -26,7 +32,8 @@ class QuizViewController: UIViewController, LoadViewController {
         button.backgroundColor = .init(named: "BackgraundButton")
         button.layer.cornerRadius = 16
         button.setTitle("Option One", for: .normal)
-        button.addTarget(self, action: #selector(tapOneButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(botaoPressionado), for: .touchUpInside)
+        button.tag = QuizButtonType.optionOne.rawValue
         
         return button
     }()
@@ -36,7 +43,8 @@ class QuizViewController: UIViewController, LoadViewController {
         button.backgroundColor = .init(named: "BackgraundButton")
         button.layer.cornerRadius = 16
         button.setTitle("Option Two", for: .normal)
-        button.addTarget(self, action: #selector(tapTwoButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(botaoPressionado), for: .touchUpInside)
+        button.tag = QuizButtonType.optionTwo.rawValue
         
         return button
     }()
@@ -46,7 +54,8 @@ class QuizViewController: UIViewController, LoadViewController {
         button.backgroundColor = .init(named: "BackgraundButton")
         button.layer.cornerRadius = 16
         button.setTitle("Option Three", for: .normal)
-        button.addTarget(self, action: #selector(tapThreeButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(botaoPressionado), for: .touchUpInside)
+        button.tag = QuizButtonType.optionThree.rawValue
         
         return button
     }()
@@ -86,7 +95,6 @@ class QuizViewController: UIViewController, LoadViewController {
             make.leading.trailing.equalToSuperview().inset(64)
             make.height.equalTo(62)
             make.centerX.equalToSuperview()
-            
         }
     }
     
@@ -100,16 +108,9 @@ class QuizViewController: UIViewController, LoadViewController {
 
 @objc
 private extension QuizViewController {
-    func tapOneButton() {
-        //TODO:
-    }
-    
-    func tapTwoButton() {
-        //TODO:
-    }
-
-    func tapThreeButton() {
-        //TODO:
+    @objc func botaoPressionado(sender: UIButton) {
+        let tagDoBotao = sender.tag
+        print("The button with tag \(tagDoBotao) was pressed.")
     }
 }
 
