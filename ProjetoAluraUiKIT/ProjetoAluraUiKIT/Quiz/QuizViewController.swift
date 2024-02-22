@@ -112,20 +112,18 @@ class QuizViewController: UIViewController, LoadViewController {
 
     }
     
+    @objc
     private func showQuestion() {
         questionOnebutton.backgroundColor = .init(named: "BackgraundButton")
         questionTwobutton.backgroundColor = .init(named: "BackgraundButton")
         questionThreebutton.backgroundColor = .init(named: "BackgraundButton")
 
-
-        if numberOfQuestion <= (questions.count - 1) {
             questionLabel.text = questions[numberOfQuestion].title
             questionOnebutton.setTitle(questions[numberOfQuestion].awnsers[0], for: .normal)
             questionTwobutton.setTitle(questions[numberOfQuestion].awnsers[1], for: .normal)
             questionThreebutton.setTitle(questions[numberOfQuestion].awnsers[2], for: .normal)
             
             numberOfQuestion += 1
-        }
 
     }
 }
@@ -146,7 +144,14 @@ private extension QuizViewController {
         }
         
         print("Total Points= \(points)")
-        showQuestion()
+        
+        if numberOfQuestion <= (questions.count - 1) {
+            Timer.scheduledTimer(timeInterval: 1,
+                                 target: self,
+                                 selector: #selector(showQuestion),
+                                 userInfo: nil,
+                                 repeats: false)
+        }
     }
 }
 
