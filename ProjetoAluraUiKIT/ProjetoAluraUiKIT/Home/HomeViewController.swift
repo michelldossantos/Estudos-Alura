@@ -55,6 +55,7 @@ class TestViewController: UIViewController, LoadViewController {
     func setupLayout() {
         view.addSubview(imageView)
         view.addSubview(button)
+        navigationItem.hidesBackButton = true
     }
     
     @objc func iniciarQuiz() {

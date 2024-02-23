@@ -10,14 +10,13 @@ import UIKit
 import SnapKit
 
 enum QuizButtonType: Int {
-    case optionOne = 1
-    case optionTwo = 2
-    case optionThree = 3
+    case optionOne = 0
+    case optionTwo = 1
+    case optionThree = 2
 }
 
 
 class QuizViewController: UIViewController, LoadViewController {
-    let questions: [Question] = [.init(title: "Test for questions eqweqw qweqw qw eqwe qw qweq we", awnsers: ["one", "two", "three"], rightAnswer: 2), .init(title: "OutherQuestion", awnsers: ["lalalal", "blaablaa", "lolls"], rightAnswer: 3)]
     var points = 0
     var numberOfQuestion = 0
     
@@ -122,9 +121,6 @@ class QuizViewController: UIViewController, LoadViewController {
             questionOnebutton.setTitle(questions[numberOfQuestion].awnsers[0], for: .normal)
             questionTwobutton.setTitle(questions[numberOfQuestion].awnsers[1], for: .normal)
             questionThreebutton.setTitle(questions[numberOfQuestion].awnsers[2], for: .normal)
-            
-            numberOfQuestion += 1
-
     }
 }
 
@@ -134,7 +130,7 @@ private extension QuizViewController {
         let tagDoBotao = sender.tag
         print("The button with tag \(tagDoBotao) was pressed.")
         
-        if tagDoBotao == questions[0].rightAnswer {
+        if tagDoBotao == questions[numberOfQuestion].rightAnswer {
             print("right answer")
             points += 1
             sender.backgroundColor = .init(named: "BackgraundButtonAnswerRight")
@@ -145,6 +141,7 @@ private extension QuizViewController {
         
         print("Total Points= \(points)")
         
+        numberOfQuestion += 1
         if numberOfQuestion <= (questions.count - 1) {
             Timer.scheduledTimer(timeInterval: 1,
                                  target: self,

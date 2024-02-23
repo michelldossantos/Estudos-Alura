@@ -46,7 +46,7 @@ class ScoreViewController: UIViewController, LoadViewController {
         button.backgroundColor = .init(named: "BackgraundButton")
         button.layer.cornerRadius = 16
         button.setTitle("Reiniciar Quiz", for: .normal)
-//        button.addTarget(self, action: #selector(botaoPressionado), for: .touchUpInside)
+        button.addTarget(self, action: #selector(botaoPressionado), for: .touchUpInside)
         button.tag = QuizButtonType.optionThree.rawValue
         
         return button
@@ -56,11 +56,11 @@ class ScoreViewController: UIViewController, LoadViewController {
         self.points = points
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     
     override func viewDidLoad() {
@@ -87,7 +87,7 @@ class ScoreViewController: UIViewController, LoadViewController {
         }
         
         restartButton.snp.makeConstraints { make in
-            make.top.equalTo(percentageLabel.snp.bottom).offset(64)
+            make.bottom.equalToSuperview().offset(8)
             make.leading.trailing.equalToSuperview().inset(64)
             make.height.equalTo(62)
         }
@@ -99,8 +99,24 @@ class ScoreViewController: UIViewController, LoadViewController {
         view.addSubview(percentageLabel)
         view.addSubview(restartButton)
         
-        resultLabel.text = "Você Acertou \(points) questões"
+        let percent = getPercent()
+        
+        resultLabel.text = "Você Acertou \(points) questões de \(questions.count) questões"
+        percentageLabel.text = "Percentual final: \(percent)%"
+        
+        navigationItem.hidesBackButton = true
     }
-    
-    
+}
+
+private extension ScoreViewController {
+    func getPercent() -> Double {
+        return Double((points * 100) / questions.count)
+    }
+}
+
+@objc
+extension ScoreViewController {
+    func botaoPressionado() {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
