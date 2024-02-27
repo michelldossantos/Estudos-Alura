@@ -67,7 +67,16 @@ struct ContentView: View {
                 
                 
                 List(viagens) { viagem in
-                    Text(viagem.titulo)
+                    VStack(alignment: .leading) {
+                        Text(viagem.titulo)
+                        Image(viagem.imagem).resizable()
+                            .frame(height: 125)
+                        HStack {
+                            Text(viagem.quantidadeDeDias)
+                            Spacer()
+                            Text(viagem.valor)
+                        }
+                    }
                 }
             }.ignoresSafeArea(.all)
         }
