@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         GeometryReader { view in
             
-            VStack {
+            VStack(spacing: 0) {
                 VStack {
                     Text("Viagens").foregroundColor(.white)
                         .font(.custom("Avenir Black", size: 20))
@@ -27,16 +27,49 @@ struct ContentView: View {
                         .font(.custom("Avenir Black", size: 23))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 30)
-                    
                 }
                 .frame(width: view.size.width, height: 180, alignment: .top)
                 .background(Color.purple)
-                List {
-                    Text("Viagens")
-                    Text("ESPECIAL")
-                    Text("BRASIL")
+                HStack {
+                    Button("Hotéis") {
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    }.frame(width: 100, height: 50)
+                        .font(.custom("Avenir Medium", size: 17))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.blue, lineWidth: 1)
+                                .background(Color.blue)
+                        )
+                        .cornerRadius(16)
+                        .offset(x: 50)
+                        .foregroundColor(.white)
+                        .offset(y: -25)
+                    Spacer()
+                    Button("Pacotes") {
+                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    }.frame(width: 100, height: 50)
+                        .font(.custom("Avenir Medium", size: 17))
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.orange, lineWidth: 1)
+                                .background(Color.orange)
+                        )
+                        .cornerRadius(16)
+                        .offset(x: -50)
+                        .offset(y: -25)
+                        .foregroundColor(.white)
                 }
-            }
+
+
+                
+                    
+                
+                
+                
+                List(viagens) { viagem in
+                    Text(viagem.titulo)
+                }
+            }.ignoresSafeArea(.all)
         }
     }
 }
