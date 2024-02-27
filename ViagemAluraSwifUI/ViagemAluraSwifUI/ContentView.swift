@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         GeometryReader { view in
-            
             VStack(spacing: 0) {
+//MARK: Botões
                 VStack {
                     Text("Viagens").foregroundColor(.white)
                         .font(.custom("Avenir Black", size: 20))
@@ -30,6 +30,8 @@ struct ContentView: View {
                 }
                 .frame(width: view.size.width, height: 180, alignment: .top)
                 .background(Color.purple)
+                
+//MARK: Botões
                 HStack {
                     Button("Hotéis") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
@@ -41,10 +43,9 @@ struct ContentView: View {
                                 .background(Color.blue)
                         )
                         .cornerRadius(16)
-                        .offset(x: 50)
                         .foregroundColor(.white)
-                        .offset(y: -25)
                     Spacer()
+                    
                     Button("Pacotes") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                     }.frame(width: 100, height: 50)
@@ -55,17 +56,11 @@ struct ContentView: View {
                                 .background(Color.orange)
                         )
                         .cornerRadius(16)
-                        .offset(x: -50)
-                        .offset(y: -25)
                         .foregroundColor(.white)
-                }
+                }.padding(.top, -25)
+                    .background(.clear)
 
-
-                
-                    
-                
-                
-                
+//MARK: Lista
                 List(viagens) { viagem in
                     VStack(alignment: .leading) {
                         Text(viagem.titulo)
@@ -77,7 +72,7 @@ struct ContentView: View {
                             Text(viagem.valor)
                         }
                     }
-                }
+                } .listStyle(.inset)
             }.ignoresSafeArea(.all)
         }
     }
