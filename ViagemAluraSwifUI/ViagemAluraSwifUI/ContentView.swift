@@ -13,12 +13,11 @@ struct ContentView: View {
             VStack(spacing: 0) {
 //MARK: Botões
                 VStack {
-                    Text("Viagens").foregroundColor(.white)
+                    Text("Viagens")
+                        .foregroundColor(.white)
                         .font(.custom("Avenir Black", size: 20))
                         .lineLimit(0)
                         .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding(.top, 10
-                        )
                     Text("ESPECIAL").foregroundColor(.white)
                         .font(.custom("Avenir Book", size: 20))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -30,6 +29,7 @@ struct ContentView: View {
                 }
                 .frame(width: view.size.width, height: 180, alignment: .top)
                 .background(Color.purple)
+
                 
 //MARK: Botões
                 HStack {
@@ -44,6 +44,7 @@ struct ContentView: View {
                         )
                         .cornerRadius(16)
                         .foregroundColor(.white)
+                        .padding(.leading, 16)
                     Spacer()
                     
                     Button("Pacotes") {
@@ -57,6 +58,7 @@ struct ContentView: View {
                         )
                         .cornerRadius(16)
                         .foregroundColor(.white)
+                        .padding(.trailing, 16)
                 }.padding(.top, -25)
                     .background(.clear)
 
@@ -73,7 +75,7 @@ struct ContentView: View {
                         }
                     }
                 } .listStyle(.inset)
-            }.ignoresSafeArea(.all)
+            }
         }
     }
 }
