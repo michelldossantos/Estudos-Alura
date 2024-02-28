@@ -19,6 +19,7 @@ struct HeaderView: View {
                         .font(.custom("Avenir Black", size: self.horizontalSizeClass == .compact ? 20 : 30))
                         .lineLimit(0)
                         .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding(.top, self.horizontalSizeClass == .compact ? 20: 80)
                     Text("ESPECIAL").foregroundColor(.white)
                         .font(.custom("Avenir Book", size: self.horizontalSizeClass == .compact ? 20 : 30))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
@@ -36,7 +37,7 @@ struct HeaderView: View {
                 HStack {
                     Button("Hotéis") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                    }.frame(width: 100, height: 50)
+                    }.frame(width: self.horizontalSizeClass == .compact ? 100 : 150 , height: self.horizontalSizeClass == .compact ? 50 : 80)
                         .font(.custom("Avenir Medium", size: self.horizontalSizeClass == .compact ? 17 : 24))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -47,12 +48,12 @@ struct HeaderView: View {
                         .foregroundColor(.white)
 //                        .padding(.leading, self.horizontalSizeClass == .compact ? 17 : view.size.width/4)
                         .offset(x: self.horizontalSizeClass == .compact ? 50 : view.size.width/4)
-                        .offset(y: -25)
+                        .offset(y: self.horizontalSizeClass == .compact ? -25 : -40)
                     Spacer()
                     
                     Button("Pacotes") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                    }.frame(width: 100, height: 50)
+                    }.frame(width: self.horizontalSizeClass == .compact ? 100 : 150 , height: self.horizontalSizeClass == .compact ? 50 : 80)
                         .font(.custom("Avenir Medium", size: self.horizontalSizeClass == .compact ? 17 : 24))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
@@ -63,7 +64,7 @@ struct HeaderView: View {
                         .foregroundColor(.white)
 //                        .padding(.trailing, 16)
                         .offset(x: self.horizontalSizeClass == .compact ? -50 : -view.size.width/4)
-                        .offset(y: -25)
+                        .offset(y: self.horizontalSizeClass == .compact ? -25 : -40)
                 }
             }
         }
@@ -76,10 +77,6 @@ struct HeaderView_Previews: PreviewProvider {
             .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
             .previewDisplayName("iPhone 14")
 
-        HeaderView()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
-            .previewDisplayName("iPhone 14 Pro Max")
-        
         HeaderView()
             .previewDevice(PreviewDevice(rawValue: "iPad Pro"))
             .previewDisplayName("iPad")
