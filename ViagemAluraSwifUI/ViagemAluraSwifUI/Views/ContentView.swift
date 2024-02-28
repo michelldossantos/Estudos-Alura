@@ -31,8 +31,8 @@ struct ContentView_Previews: PreviewProvider {
             .previewDisplayName("iPhone 14")
 
         ContentView()
-            .previewDevice(PreviewDevice(rawValue: "iPad Pro (9.7-inch)"))
-            .previewDisplayName("iPad 9.7")
+            .previewDevice(PreviewDevice(rawValue: "iPad (10th generation)"))
+            .previewDisplayName("iPad 10")
     }
 }
 
