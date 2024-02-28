@@ -12,7 +12,7 @@ struct HeaderView: View {
     
     var body: some View {
         GeometryReader { view in
-            VStack {
+            VStack(spacing: 0) {
                 VStack {
                     Text("Viagens")
                         .foregroundColor(.white)
@@ -28,7 +28,7 @@ struct HeaderView: View {
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 30)
                 }
-                .frame(width: view.size.width, height: 180, alignment: .top)
+                .frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 150 : 200, alignment: .top)
                 .background(Color.purple)
 
                 
@@ -37,7 +37,7 @@ struct HeaderView: View {
                     Button("Hotéis") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                     }.frame(width: 100, height: 50)
-                        .font(.custom("Avenir Medium", size: 17))
+                        .font(.custom("Avenir Medium", size: self.horizontalSizeClass == .compact ? 17 : 24))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.blue, lineWidth: 1)
@@ -45,13 +45,15 @@ struct HeaderView: View {
                         )
                         .cornerRadius(16)
                         .foregroundColor(.white)
-                        .padding(.leading, 16)
+//                        .padding(.leading, self.horizontalSizeClass == .compact ? 17 : view.size.width/4)
+                        .offset(x: self.horizontalSizeClass == .compact ? 50 : view.size.width/4)
+                        .offset(y: -25)
                     Spacer()
                     
                     Button("Pacotes") {
                         /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                     }.frame(width: 100, height: 50)
-                        .font(.custom("Avenir Medium", size: 17))
+                        .font(.custom("Avenir Medium", size: self.horizontalSizeClass == .compact ? 17 : 24))
                         .background(
                             RoundedRectangle(cornerRadius: 10)
                                 .stroke(Color.orange, lineWidth: 1)
@@ -59,10 +61,10 @@ struct HeaderView: View {
                         )
                         .cornerRadius(16)
                         .foregroundColor(.white)
-                        .padding(.trailing, 16)
-                }.padding(.top, -25)
-                    .background(.clear)
-
+//                        .padding(.trailing, 16)
+                        .offset(x: self.horizontalSizeClass == .compact ? -50 : -view.size.width/4)
+                        .offset(y: -25)
+                }
             }
         }
         }
@@ -71,6 +73,17 @@ struct HeaderView: View {
 struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
         HeaderView()
-            .previewLayout(.fixed(width: 400, height: 220))
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+            .previewDisplayName("iPhone 14")
+
+        HeaderView()
+            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro Max"))
+            .previewDisplayName("iPhone 14 Pro Max")
+        
+        HeaderView()
+            .previewDevice(PreviewDevice(rawValue: "iPad Pro"))
+            .previewDisplayName("iPad")
+
     }
+
 }
