@@ -12,13 +12,13 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader { view in
-            VStack(spacing: 0) {
+            VStack(spacing: 50) {
                 HeaderView().frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 200 : 300, alignment: .top)
 
                 List(viagens) { viagem in
                     TravelViewCell(viagem: viagem)
                 } .listStyle(.inset)
-                    .offset(y: self.horizontalSizeClass == .compact ? -25 : -60)
+//                    .offset(y: self.horizontalSizeClass == .compact ? -25 : -60)
             }
         }
     }

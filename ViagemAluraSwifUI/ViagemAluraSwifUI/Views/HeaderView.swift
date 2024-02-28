@@ -28,7 +28,7 @@ struct HeaderView: View {
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 30)
                 }
-                .frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 150 : 200, alignment: .top)
+                .frame(width: view.size.width, height: self.horizontalSizeClass == .compact ? 200 : 310, alignment: .top)
                 .background(Color.purple)
 
                 
