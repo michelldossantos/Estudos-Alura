@@ -16,6 +16,7 @@
 		0ABD05F32B8E605800AF5E80 /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD05F12B8E605800AF5E80 /* Dados.swift */; };
 		0ABD05F82B8EBE0C00AF5E80 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD05F72B8EBE0C00AF5E80 /* HeaderView.swift */; };
 		0ABD05FA2B8EC01B00AF5E80 /* TravelViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD05F92B8EC01B00AF5E80 /* TravelViewCell.swift */; };
+		0AF62B5C2B8FB3C4007D62B1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF62B5B2B8FB3C4007D62B1 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0ABD05F12B8E605800AF5E80 /* Dados.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
 		0ABD05F72B8EBE0C00AF5E80 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0ABD05F92B8EC01B00AF5E80 /* TravelViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewCell.swift; sourceTree = "<group>"; };
+		0AF62B5B2B8FB3C4007D62B1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				0ABD05F72B8EBE0C00AF5E80 /* HeaderView.swift */,
 				0ABD05D22B89180D00AF5E80 /* ContentView.swift */,
 				0ABD05F92B8EC01B00AF5E80 /* TravelViewCell.swift */,
+				0AF62B5B2B8FB3C4007D62B1 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF62B5C2B8FB3C4007D62B1 /* MapView.swift in Sources */,
 				0ABD05F82B8EBE0C00AF5E80 /* HeaderView.swift in Sources */,
 				0ABD05D32B89180D00AF5E80 /* ContentView.swift in Sources */,
 				0ABD05F32B8E605800AF5E80 /* Dados.swift in Sources */,
