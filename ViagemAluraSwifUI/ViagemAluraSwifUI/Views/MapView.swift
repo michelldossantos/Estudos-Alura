@@ -22,11 +22,14 @@ struct MapaView: UIViewRepresentable {
         let region = MKCoordinateRegion(center: coordinate, span: span)
         uiView.setRegion(region, animated: true)
     }
-
 }
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         MapaView(coordinate: viagens[0].localizacao)
+        
+        MapaView(coordinate: viagens[0].localizacao)
+            .previewDevice(PreviewDevice(rawValue: "iPad (10th generation)"))
+            .previewDisplayName("iPad 10")
     }
 }
