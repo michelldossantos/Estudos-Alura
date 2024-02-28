@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
     var body: some View {
         GeometryReader { view in
             VStack {
                 VStack {
                     Text("Viagens")
                         .foregroundColor(.white)
-                        .font(.custom("Avenir Black", size: 20))
+                        .font(.custom("Avenir Black", size: self.horizontalSizeClass == .compact ? 20 : 30))
                         .lineLimit(0)
                         .frame(minWidth: 0, maxWidth: .infinity)
                     Text("ESPECIAL").foregroundColor(.white)
-                        .font(.custom("Avenir Book", size: 20))
+                        .font(.custom("Avenir Book", size: self.horizontalSizeClass == .compact ? 20 : 30))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 30)
                     Text("BRASIL").foregroundColor(.white)
-                        .font(.custom("Avenir Black", size: 23))
+                        .font(.custom("Avenir Black", size: self.horizontalSizeClass == .compact ? 23: 33))
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         .padding(.leading, 30)
                 }
