@@ -11,11 +11,10 @@ struct OrderTypeGrid: View {
     var body: some View {
         LazyHGrid(rows: [
             GridItem(.fixed(100)),
-            GridItem(.fixed(100)),
             GridItem(.fixed(100))
         ]) {
             ForEach(ordersMock) { orderItem in
-                Text(orderItem.name)
+                OrderTypeView(orderType: orderItem)
             }
             
         }
