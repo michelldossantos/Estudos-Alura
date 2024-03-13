@@ -14,3 +14,10 @@ let ordersMock: [OrderType] = [.init(id: 1, name: "Restaurantes", image: "hambur
                                .init(id: 5, name: "Descontos", image: "descontos"),
                                .init(id: 6, name: "Bebidas", image: "bebidas"),
                                .init(id: 7, name: "Gourmet", image: "gourmet")]
+
+let storesMock: [OrderType] = [.init(id: 1, name: "Monstro Bugs", image: "hamburguer"),
+                               .init(id: 2, name: "Food court", image: "mercado"),
+                               .init(id: 3, name: "Carbon", image: "farmacia"),
+                               .init(id: 4, name: "Padaria", image: "petshop"),
+                               .init(id: 5, name: "Descontos", image: "bacon_burger")]
+

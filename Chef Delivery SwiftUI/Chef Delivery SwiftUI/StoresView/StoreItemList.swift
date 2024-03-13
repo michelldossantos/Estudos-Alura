@@ -8,15 +8,21 @@
 import SwiftUI
 
 struct StoreItemList: View {
+    let orders: [OrderType]
+    let title: String
     var body: some View {
-        List() {
-            Text("Ola")
+        VStack(alignment: .leading) {
+            Text("Lojas").font(.headline)
+            ForEach(orders) { order in
+                StoreItemView(order: order)
+            }
         }
     }
 }
 
 struct StoreItemList_Previews: PreviewProvider {
     static var previews: some View {
-        StoreItemList()
+        StoreItemList(orders: storesMock, title: "Loajas").previewLayout(.sizeThatFits)
+            .padding()
     }
 }
