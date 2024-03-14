@@ -16,7 +16,7 @@ struct ContentView: View {
                     VStack(alignment: .leading, spacing: 20){
                         OrderTypeGrid()
                         CarouselTabView()
-                        StoreItemList(orders: storesMock, title: "Lojas")
+                        StoreItemList(stores: storesMock, title: "Lojas")
                     }
                 }
             }
