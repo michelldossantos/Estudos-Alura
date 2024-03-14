@@ -96,6 +96,7 @@
 		0AF62B682B901003007D62B1 /* Chef Delivery SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0AF9BE2A2BA28F4E004D1454 /* StoreDetail */,
 				0A2E9BBD2BA13FB3005B7383 /* StoresView */,
 				0A6678D02B9FE8BD00299377 /* CarouselItemView */,
 				0A476BF12B980399004ED4C4 /* Model */,
@@ -140,6 +141,21 @@
 				0A476BF62B98096C004ED4C4 /* OrderTypeView.swift */,
 			);
 			path = GridView;
+			sourceTree = "<group>";
+		};
+		0AF9BE2A2BA28F4E004D1454 /* StoreDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0AF9BE2B2BA28F66004D1454 /* View */,
+			);
+			path = StoreDetail;
+			sourceTree = "<group>";
+		};
+		0AF9BE2B2BA28F66004D1454 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
