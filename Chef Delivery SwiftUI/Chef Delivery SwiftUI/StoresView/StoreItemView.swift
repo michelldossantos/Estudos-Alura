@@ -19,6 +19,7 @@ struct StoreItemView: View {
                 .frame(width: 50, height: 50)
             Text(order.name)
                 .font(.subheadline)
+            Spacer()
         }
     }
 }
