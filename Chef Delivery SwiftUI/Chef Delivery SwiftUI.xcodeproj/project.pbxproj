@@ -20,6 +20,7 @@
 		0AF62B712B901005007D62B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AF62B702B901005007D62B1 /* Preview Assets.xcassets */; };
 		0AF62B7A2B901381007D62B1 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF62B792B901381007D62B1 /* NavigationBar.swift */; };
 		0AF62B7D2B901868007D62B1 /* OrderTypeGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF62B7C2B901868007D62B1 /* OrderTypeGrid.swift */; };
+		0AF9BE2D2BA2906E004D1454 /* StoreDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF9BE2C2BA2906E004D1454 /* StoreDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		0AF62B702B901005007D62B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0AF62B792B901381007D62B1 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		0AF62B7C2B901868007D62B1 /* OrderTypeGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTypeGrid.swift; sourceTree = "<group>"; };
+		0AF9BE2C2BA2906E004D1454 /* StoreDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +98,12 @@
 		0AF62B682B901003007D62B1 /* Chef Delivery SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0AF62B782B90134C007D62B1 /* App */,
 				0AF9BE2A2BA28F4E004D1454 /* StoreDetail */,
 				0A2E9BBD2BA13FB3005B7383 /* StoresView */,
 				0A6678D02B9FE8BD00299377 /* CarouselItemView */,
 				0A476BF12B980399004ED4C4 /* Model */,
 				0AF62B7B2B901844007D62B1 /* GridView */,
-				0AF62B782B90134C007D62B1 /* App */,
 				0AF62B772B901341007D62B1 /* NaviationBar */,
 				0AF62B6D2B901005007D62B1 /* Assets.xcassets */,
 				0AF62B6F2B901005007D62B1 /* Preview Content */,
@@ -154,6 +156,7 @@
 		0AF9BE2B2BA28F66004D1454 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0AF9BE2C2BA2906E004D1454 /* StoreDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				0A476BF72B98096C004ED4C4 /* OrderTypeView.swift in Sources */,
 				0A2E9BBF2BA13FE3005B7383 /* StoreItemView.swift in Sources */,
 				0AF62B6A2B901003007D62B1 /* Chef_Delivery_SwiftUIApp.swift in Sources */,
+				0AF9BE2D2BA2906E004D1454 /* StoreDetailView.swift in Sources */,
 				0A2E9BC12BA140C7005B7383 /* StoreItemList.swift in Sources */,
 				0AF62B7D2B901868007D62B1 /* OrderTypeGrid.swift in Sources */,
 				0AF62B7A2B901381007D62B1 /* NavigationBar.swift in Sources */,

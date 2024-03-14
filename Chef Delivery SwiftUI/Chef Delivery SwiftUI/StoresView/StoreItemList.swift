@@ -14,9 +14,14 @@ struct StoreItemList: View {
         VStack(alignment: .leading) {
             Text("Lojas").font(.headline)
             ForEach(orders) { order in
-                StoreItemView(order: order)
+                NavigationLink {
+                    StoreDetailView(store: order)
+                } label: {
+                    StoreItemView(order: order)
+
+                }
             }
-        }
+        }.foregroundColor(.black)
     }
 }
 
