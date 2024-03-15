@@ -9,6 +9,7 @@ import SwiftUI
 
 struct StoreDetailView: View {
     let store: StoreType
+    @Environment(\.dismiss) var close
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -46,6 +47,19 @@ struct StoreDetailView: View {
                 }
             }
             .navigationTitle(store.name)
+            .navigationBarBackButtonHidden()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        close()
+                    } label: {
+                            HStack(spacing: 4) {
+                                Image(systemName: "cart")
+                                Text("Lojas")
+                            }.foregroundColor(Color("ColorRed"))
+                        }
+                }
+            }
         }
     }
 }
