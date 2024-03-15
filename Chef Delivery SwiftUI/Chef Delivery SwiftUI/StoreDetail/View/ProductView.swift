@@ -21,7 +21,7 @@ struct ProductView: View {
                         .font(.caption)
                         .foregroundColor(.black.opacity(0.5))
                         .lineLimit(.none)
-                    Text("R$\(product.price)").bold()
+                    Text(product.formattedPrice).bold()
                 }
                 Spacer()
                 Image(product.image)
