@@ -29,7 +29,7 @@ struct ProductDetailView: View {
                     .font(.title3)
                     .bold()
                     .padding(.horizontal)
-            }
+            }.padding(.top, 16)
             Spacer()
             
             VStack(spacing: 15) {

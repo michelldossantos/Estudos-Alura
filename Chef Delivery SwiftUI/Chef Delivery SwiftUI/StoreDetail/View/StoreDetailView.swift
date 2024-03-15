@@ -10,6 +10,7 @@ import SwiftUI
 struct StoreDetailView: View {
     let store: StoreType
     @Environment(\.dismiss) var close
+    @State private var selectedProduct: ProductType?
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -43,11 +44,13 @@ struct StoreDetailView: View {
                     .padding()
                 
                 ForEach(store.products) { product in
-                    NavigationLink {
-                        ProductDetailView(product: product)
+                    Button {
+                        selectedProduct = product
                     } label: {
                         ProductView(product: product)
                             .foregroundColor(.black)
+                    }.sheet(item: $selectedProduct) { product in
+                        ProductDetailView(product: product)
                     }
                 }
             }
