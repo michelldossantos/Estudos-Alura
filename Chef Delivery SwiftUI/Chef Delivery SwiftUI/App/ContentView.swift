@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-               NavigationBar()
+                NavigationBar()
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(alignment: .leading, spacing: 20){
                         OrderTypeGrid()
