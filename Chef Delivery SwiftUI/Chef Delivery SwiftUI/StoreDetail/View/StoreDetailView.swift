@@ -43,7 +43,12 @@ struct StoreDetailView: View {
                     .padding()
                 
                 ForEach(store.products) { product in
-                    ProductView(product: product)
+                    NavigationLink {
+                        ProductDetailView(product: product)
+                    } label: {
+                        ProductView(product: product)
+                            .foregroundColor(.black)
+                    }
                 }
             }
             .navigationTitle(store.name)

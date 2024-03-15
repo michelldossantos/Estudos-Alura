@@ -21,6 +21,7 @@ struct ProductView: View {
                         .font(.caption)
                         .foregroundColor(.black.opacity(0.5))
                         .lineLimit(.none)
+                        .multilineTextAlignment(.leading)
                     Text(product.formattedPrice).bold()
                 }
                 Spacer()
