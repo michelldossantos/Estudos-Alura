@@ -29,23 +29,35 @@ struct ProductDetailView: View {
                     .bold()
                     .padding(.horizontal)
             }
-            
-//            VStack {
-//                Text("Quantidade")
-//                    .font(.title)
-//                HStack {
-//                    Image(systemName: "plus")
-//                        .foregroundColor(Color("ColorRed"))
-//                        .font(.title3)
-//                    Text("1")
-//                        .font(.title2)
-//                        .bold()
-//                    Image(systemName: "plus")
-//                        .foregroundColor(Color("ColorRed"))
-//                        .font(.title3)
-//                }
-//            }
             Spacer()
+            
+            VStack(spacing: 15) {
+                Text("Quantidade")
+                    .font(.title3)
+                HStack {
+                    
+                    Button {
+                        //TODO:
+                    } label: {
+                        Image(systemName: "minus.circle.fill")
+                            .font(.title)
+                            .bold()
+                    }
+                    Text("1")
+                        .font(.title2)
+                        .bold()
+                    
+                    Button {
+                        //TODO:
+                    } label: {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.title)
+                            .bold()
+                    }
+                }
+            }
+            Spacer()
+            
             Button {
                 //TODO:
             } label: {
