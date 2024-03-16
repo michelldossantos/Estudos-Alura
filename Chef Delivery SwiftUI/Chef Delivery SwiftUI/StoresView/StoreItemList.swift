@@ -30,19 +30,29 @@ struct StoreItemList: View {
                                 Text("\(rating) estralas ou mais")
                             } else {
                                 Text("\(rating) estrala ou mais")
-
+                                
                             }
                         }
-
+                        
                     }
                 }
             }
-            ForEach(filteredStore) { store in
-                NavigationLink {
-                    StoreDetailView(store: store)
-                } label: {
-                    StoreItemView(store: store)
-
+            if filteredStore.isEmpty {
+                Text("Nenhuma loja encontrada")
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(Color("ColorRed"))
+                    .padding(.vertical, 32)
+                    .frame(maxWidth: .infinity)
+                
+            } else {
+                ForEach(filteredStore) { store in
+                    NavigationLink {
+                        StoreDetailView(store: store)
+                    } label: {
+                        StoreItemView(store: store)
+                        
+                    }
                 }
             }
         }.foregroundColor(.black)
