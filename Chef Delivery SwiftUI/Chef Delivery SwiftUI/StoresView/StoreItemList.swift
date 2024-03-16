@@ -22,6 +22,13 @@ struct StoreItemList: View {
                 Text("Lojas").font(.headline)
                 Spacer()
                 Menu("Filtrar") {
+                    Button {
+                        ratingFilter = 0
+                    } label: {
+                        Text("Limpar Filtro")
+                    }
+                    Divider()
+                    
                     ForEach(1...5, id: \.self) { rating in
                         Button {
                             ratingFilter = rating
