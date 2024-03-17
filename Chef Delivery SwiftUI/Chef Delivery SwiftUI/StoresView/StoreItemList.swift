@@ -7,6 +7,29 @@
 
 import SwiftUI
 
+enum Distance: Int, CaseIterable {
+    case one = 1
+    case five = 5
+    case ten = 10
+    case twenty = 20
+}
+
+struct DistanceButton: View {
+    let distance: Distance
+
+    var body: some View {
+        Button(action: {
+            print("Distância selecionada: \(distance.rawValue) km")
+        }) {
+            Text("Até \(distance.rawValue) km")
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+        }
+    }
+}
+
 struct StoreItemList: View {
     let stores: [StoreType]
     @State private var ratingFilter = 0
@@ -21,6 +44,11 @@ struct StoreItemList: View {
             HStack {
                 Text("Lojas").font(.headline)
                 Spacer()
+                Menu("Distâncias") {
+                    ForEach(Distance.allCases, id: \.self) { distance in
+                        DistanceButton(distance: distance)
+                    }
+                }
                 Menu("Filtrar") {
                     Button {
                         ratingFilter = 0
@@ -43,6 +71,8 @@ struct StoreItemList: View {
                         
                     }
                 }
+                
+
             }
             if filteredStore.isEmpty {
                 Text("Nenhuma loja encontrada")
