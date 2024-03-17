@@ -19,7 +19,7 @@ struct DistanceButton: View {
 
     var body: some View {
         Button(action: {
-            print("Distância selecionada: \(distance.rawValue) km")
+                //TODO: Action
         }) {
             Text("Até \(distance.rawValue) km")
                 .padding()
@@ -71,8 +71,6 @@ struct StoreItemList: View {
                         
                     }
                 }
-                
-
             }
             if filteredStore.isEmpty {
                 Text("Nenhuma loja encontrada")

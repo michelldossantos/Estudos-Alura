@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProductView: View {
+struct StoreDetailProductView: View {
     let product: ProductType
     
     var body: some View {
@@ -41,6 +41,6 @@ struct ProductView: View {
 
 struct ProductView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductView(product: storesMock[0].products[0]).previewLayout(.sizeThatFits)
+        StoreDetailProductView(product: storesMock[0].products[0]).previewLayout(.sizeThatFits)
     }
 }
