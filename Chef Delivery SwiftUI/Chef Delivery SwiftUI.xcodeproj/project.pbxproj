@@ -18,6 +18,8 @@
 		0A99E1892BA7771900EBB68B /* StoreDetailProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A99E1882BA7771900EBB68B /* StoreDetailProductsView.swift */; };
 		0A99E18C2BA77AE400EBB68B /* RatingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A99E18B2BA77AE400EBB68B /* RatingMenu.swift */; };
 		0A99E1902BA77BA900EBB68B /* DistanceMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A99E18F2BA77BA900EBB68B /* DistanceMenu.swift */; };
+		0A99E1922BA77EF300EBB68B /* ProductDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A99E1912BA77EF300EBB68B /* ProductDetailHeaderView.swift */; };
+		0A99E1942BA77F8B00EBB68B /* ProductDetailQuantityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A99E1932BA77F8B00EBB68B /* ProductDetailQuantityView.swift */; };
 		0AC3DB5F2BA3D81A00D089C2 /* StoreDetailProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3DB5E2BA3D81A00D089C2 /* StoreDetailProductView.swift */; };
 		0AC3DB622BA3E1DA00D089C2 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3DB612BA3E1DA00D089C2 /* DoubleExtension.swift */; };
 		0AC3DE532BA4F7BD00D089C2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC3DE522BA4F7BD00D089C2 /* ProductDetailView.swift */; };
@@ -44,6 +46,8 @@
 		0A99E1882BA7771900EBB68B /* StoreDetailProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailProductsView.swift; sourceTree = "<group>"; };
 		0A99E18B2BA77AE400EBB68B /* RatingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingMenu.swift; sourceTree = "<group>"; };
 		0A99E18F2BA77BA900EBB68B /* DistanceMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceMenu.swift; sourceTree = "<group>"; };
+		0A99E1912BA77EF300EBB68B /* ProductDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailHeaderView.swift; sourceTree = "<group>"; };
+		0A99E1932BA77F8B00EBB68B /* ProductDetailQuantityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailQuantityView.swift; sourceTree = "<group>"; };
 		0AC3DB5E2BA3D81A00D089C2 /* StoreDetailProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailProductView.swift; sourceTree = "<group>"; };
 		0AC3DB612BA3E1DA00D089C2 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		0AC3DE522BA4F7BD00D089C2 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				0AC3DE522BA4F7BD00D089C2 /* ProductDetailView.swift */,
+				0A99E1912BA77EF300EBB68B /* ProductDetailHeaderView.swift */,
+				0A99E1932BA77F8B00EBB68B /* ProductDetailQuantityView.swift */,
 			);
 			path = ProductDetailView;
 			sourceTree = "<group>";
@@ -278,6 +284,7 @@
 				0AF9BE312BA2954A004D1454 /* ProductType.swift in Sources */,
 				0A6678D22B9FE8F200299377 /* CarouselItemView.swift in Sources */,
 				0AC3DE532BA4F7BD00D089C2 /* ProductDetailView.swift in Sources */,
+				0A99E1922BA77EF300EBB68B /* ProductDetailHeaderView.swift in Sources */,
 				0AF62B6C2B901003007D62B1 /* ContentView.swift in Sources */,
 				0A99E18C2BA77AE400EBB68B /* RatingMenu.swift in Sources */,
 				0A476BF52B98042A004ED4C4 /* DataSourceMock.swift in Sources */,
@@ -290,6 +297,7 @@
 				0A2E9BC12BA140C7005B7383 /* StoreItemList.swift in Sources */,
 				0AC3DB5F2BA3D81A00D089C2 /* StoreDetailProductView.swift in Sources */,
 				0AF62B7D2B901868007D62B1 /* OrderTypeGrid.swift in Sources */,
+				0A99E1942BA77F8B00EBB68B /* ProductDetailQuantityView.swift in Sources */,
 				0A99E1892BA7771900EBB68B /* StoreDetailProductsView.swift in Sources */,
 				0AF62B7A2B901381007D62B1 /* NavigationBar.swift in Sources */,
 				0AF9BE2F2BA294E5004D1454 /* StoreType.swift in Sources */,
