@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProductDetailQuantityView: View {
-    @State private var productQuantity = 1
+    @Binding var productQuantity: Int
     
     var body: some View {
         VStack {
@@ -35,7 +35,6 @@ struct ProductDetailQuantityView: View {
                     } label: {
                         Image(systemName: "plus.circle.fill")
                             .font(.title)
-                            .bold()
                     }
                 }
             }
@@ -43,8 +42,11 @@ struct ProductDetailQuantityView: View {
     }
 }
 
+
 struct ProductDetailQuantityView_Previews: PreviewProvider {
+    @State static var quantity = 1
+    
     static var previews: some View {
-        ProductDetailQuantityView().previewLayout(.sizeThatFits)
+        ProductDetailQuantityView(productQuantity: $quantity).previewLayout(.sizeThatFits)
     }
 }
