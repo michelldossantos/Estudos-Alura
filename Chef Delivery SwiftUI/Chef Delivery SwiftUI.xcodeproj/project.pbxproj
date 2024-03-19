@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0FF7152BA92B440059826D /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0FF7142BA92B440059826D /* WelcomeView.swift */; };
 		0A2E9BBF2BA13FE3005B7383 /* StoreItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9BBE2BA13FE3005B7383 /* StoreItemView.swift */; };
 		0A2E9BC12BA140C7005B7383 /* StoreItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E9BC02BA140C7005B7383 /* StoreItemList.swift */; };
 		0A476BF32B9803AF004ED4C4 /* OrderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A476BF22B9803AF004ED4C4 /* OrderType.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0FF7142BA92B440059826D /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		0A2E9BBE2BA13FE3005B7383 /* StoreItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemView.swift; sourceTree = "<group>"; };
 		0A2E9BC02BA140C7005B7383 /* StoreItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemList.swift; sourceTree = "<group>"; };
 		0A476BF22B9803AF004ED4C4 /* OrderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderType.swift; sourceTree = "<group>"; };
@@ -74,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0FF7112BA92A1B0059826D /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				0A0FF7142BA92B440059826D /* WelcomeView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		0A2E9BBD2BA13FB3005B7383 /* StoresView */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		0AF62B682B901003007D62B1 /* Chef Delivery SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0A0FF7112BA92A1B0059826D /* Welcome */,
 				0AC3DE512BA4F7A000D089C2 /* ProductDetailView */,
 				0AC3DB602BA3E1BA00D089C2 /* Extensions */,
 				0AF62B782B90134C007D62B1 /* Home */,
@@ -299,6 +310,7 @@
 				0AF62B7D2B901868007D62B1 /* OrderTypeGrid.swift in Sources */,
 				0A99E1942BA77F8B00EBB68B /* ProductDetailQuantityView.swift in Sources */,
 				0A99E1892BA7771900EBB68B /* StoreDetailProductsView.swift in Sources */,
+				0A0FF7152BA92B440059826D /* WelcomeView.swift in Sources */,
 				0AF62B7A2B901381007D62B1 /* NavigationBar.swift in Sources */,
 				0AF9BE2F2BA294E5004D1454 /* StoreType.swift in Sources */,
 				0A99E1872BA774ED00EBB68B /* StoreDetailHeaderView.swift in Sources */,
