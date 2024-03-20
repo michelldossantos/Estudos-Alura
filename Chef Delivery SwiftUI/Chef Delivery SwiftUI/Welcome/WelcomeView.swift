@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WelcomeView: View {
     @State var isAnimation = false
+    @State var imageOfSet: CGSize = .zero
     
     var body: some View {
         GeometryReader { geometry in
@@ -48,7 +49,23 @@ struct WelcomeView: View {
                         .padding(.top, 32)
                         .opacity(isAnimation ? 1 : 0)
                         .offset(y: isAnimation ? 0 : -40)
-                    Spacer()
+                    
+                    Image("image")
+                        .resizable()
+                        .scaledToFit()
+                        .shadow(radius: 60)
+                        .padding(32)
+                        .offset(x: imageOfSet.width, y: imageOfSet.height)
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ gesture in
+                                    imageOfSet = gesture.translation
+                                })
+                                .onEnded({ _ in
+                                    imageOfSet = .zero
+                                })
+                        )
+                    
                 }.onAppear {
                     withAnimation(.easeIn(duration: 2)) {
                         isAnimation = true
