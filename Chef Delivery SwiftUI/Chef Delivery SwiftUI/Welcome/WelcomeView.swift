@@ -17,21 +17,19 @@ struct WelcomeView: View {
             ZStack {
                 Circle()
                     .foregroundColor(Color("ColorRed"))
-                    .frame(width: 200)
-                    .position(x: 50, y: 100)
+                    .frame(width: isAnimation ? 200 : 0)
+                    .position(x: isAnimation ? 50 : -50, y: isAnimation ? 100: -100)
                     .blur(radius: 60)
-                    .opacity(0.5)
-                    .opacity(isAnimation ? 1 : 0)
-                    .offset(y: isAnimation ? 0 : -40)
+                    .opacity(isAnimation ? 0.5 : 0)
                 
                 Circle()
                     .foregroundColor(Color("ColorRed"))
-                    .frame(width: 200)
-                    .position(x: geometry.size.width - 50, y: geometry.size.height - 50)
+                    .frame(width: isAnimation ? 200 : 0)
+                    .position(
+                        x: isAnimation ? geometry.size.width - 50: geometry.size.width + 50 ,
+                        y: isAnimation ? geometry.size.height - 50: geometry.size.height + 50)
                     .blur(radius: 60)
-                    .opacity(0.5)
-                    .opacity(isAnimation ? 1 : 0)
-                    .offset(y: isAnimation ? 0 : -40)
+                    .opacity(isAnimation ? 0.5 : 0)
                 
                 VStack {
                     Text("Bem vindo ao Chef Delivery")
@@ -52,7 +50,7 @@ struct WelcomeView: View {
                         .offset(y: isAnimation ? 0 : -40)
                     Spacer()
                 }.onAppear {
-                    withAnimation(.easeIn(duration: 1.5)) {
+                    withAnimation(.easeIn(duration: 2)) {
                         isAnimation = true
                     }
             }
