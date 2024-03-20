@@ -54,15 +54,21 @@ struct WelcomeView: View {
                         .resizable()
                         .scaledToFit()
                         .shadow(radius: 60)
-                        .padding(32)
+                        .padding(isAnimation ? 32 : 92)
+                        .opacity(isAnimation ? 1 : 0)
                         .offset(x: imageOfSet.width, y: imageOfSet.height)
                         .gesture(
                             DragGesture()
                                 .onChanged({ gesture in
-                                    imageOfSet = gesture.translation
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        imageOfSet = gesture.translation
+                                        
+                                    }
                                 })
                                 .onEnded({ _ in
-                                    imageOfSet = .zero
+                                    withAnimation(.easeInOut(duration: 0.5)) {
+                                        imageOfSet = .zero
+                                    }
                                 })
                         )
                     
@@ -70,12 +76,12 @@ struct WelcomeView: View {
                     withAnimation(.easeIn(duration: 2)) {
                         isAnimation = true
                     }
-            }
+                }
             }
         }
     }
 }
-                          
+
 
 struct WelcomeView_Previews: PreviewProvider {
     static var previews: some View {
