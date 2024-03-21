@@ -12,6 +12,7 @@ struct WelcomeView: View {
     @State var isAnimation = false
     @State var imageOfSet: CGSize = .zero
     @State var buttonOfSet: CGFloat = 0
+    @State private var showSecondScreen = false
     
     let buttonHeight: CGFloat = 80
     
@@ -38,8 +39,9 @@ struct WelcomeView: View {
                 ScrollView {
                     VStack {
                         Text("Bem vindo ao Chef Delivery")
-                            .font(.system(size: 40))
+                            .font(.system(size: 48))
                             .foregroundColor(Color("ColorRed"))
+                            .fontWeight(.heavy)
                             .bold()
                             .multilineTextAlignment(.center)
                             .padding(.top, 32)
@@ -125,7 +127,7 @@ struct WelcomeView: View {
                                     })
                                     .onEnded({ _ in
                                         if buttonOfSet >= (geometry.size.width - 60) / 2 {
-                                            //TODO: Navega
+                                            showSecondScreen = true
                                         } else {
                                             withAnimation(.easeInOut(duration: 0.25)) {
                                                 buttonOfSet = 0
@@ -133,18 +135,20 @@ struct WelcomeView: View {
                                         }
                                     })
                             )
-
-                            
                         }.frame(width: geometry.size.width - 60, height: buttonHeight )
-
+                            .opacity(isAnimation ? 1 : 0)
+                            .offset(y: isAnimation ? 0 : 100)
+                        
                         
                     }.onAppear {
                         withAnimation(.easeIn(duration: 2)) {
                             isAnimation = true
                         }
-                }
+                    }
                 }
             }
+        }.fullScreenCover(isPresented: $showSecondScreen) {
+            ContentView()
         }
     }
 }
