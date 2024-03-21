@@ -11,6 +11,7 @@ import SwiftUI
 struct WelcomeView: View {
     @State var isAnimation = false
     @State var imageOfSet: CGSize = .zero
+    @State var buttonOfSet: CGFloat = 0
     
     let buttonHeight: CGFloat = 80
     
@@ -103,6 +104,20 @@ struct WelcomeView: View {
                                 
                                 Spacer()
                             }
+                            .offset(x: buttonOfSet)
+                            .gesture(
+                                DragGesture()
+                                    .onChanged({ gesture in
+                                        withAnimation(.easeInOut(duration: 0.25)) {
+                                            buttonOfSet = gesture.translation.width
+                                        }
+                                    })
+                                    .onEnded({ _ in
+                                        withAnimation(.easeInOut(duration: 0.25)) {
+                                            buttonOfSet = 0
+                                        }
+                                    })
+                            )
 
                             
                         }.frame(width: geometry.size.width - 60, height: buttonHeight )
