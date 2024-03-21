@@ -90,6 +90,15 @@ struct WelcomeView: View {
                                 .offset(x: 20)
                             
                             HStack {
+                                Capsule()
+                                    .fill(Color("ColorRed"))
+                                    .frame(width: buttonOfSet + buttonHeight)
+                                
+                                Spacer()
+                                
+                            }
+                            
+                            HStack {
                                 ZStack {
                                     Circle()
                                         .fill(Color("ColorRed"))
@@ -100,7 +109,7 @@ struct WelcomeView: View {
                                         .font(.title2)
                                         .foregroundColor(.white)
                                         .bold()
-                                }.frame(height: buttonHeight)
+                                }.frame(height: buttonHeight + 8)
                                 
                                 Spacer()
                             }
@@ -108,13 +117,19 @@ struct WelcomeView: View {
                             .gesture(
                                 DragGesture()
                                     .onChanged({ gesture in
-                                        withAnimation(.easeInOut(duration: 0.25)) {
-                                            buttonOfSet = gesture.translation.width
+                                        if gesture.translation.width >= 0, buttonOfSet <= (geometry.size.width - 140) {
+                                            withAnimation(.easeInOut(duration: 0.4)) {
+                                                buttonOfSet = gesture.translation.width
+                                            }
                                         }
                                     })
                                     .onEnded({ _ in
-                                        withAnimation(.easeInOut(duration: 0.25)) {
-                                            buttonOfSet = 0
+                                        if buttonOfSet >= (geometry.size.width - 60) / 2 {
+                                            //TODO: Navega
+                                        } else {
+                                            withAnimation(.easeInOut(duration: 0.25)) {
+                                                buttonOfSet = 0
+                                            }
                                         }
                                     })
                             )
