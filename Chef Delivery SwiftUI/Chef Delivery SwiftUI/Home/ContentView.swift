@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    let service = HomeService()
+
     @State private var storesAPI: [StoreType] = storesMock
 
     var body: some View {
@@ -24,32 +26,16 @@ struct ContentView: View {
             }
             .padding()
         }.onAppear {
-            fetchStores()
-            
-
-        }
-    }
-
-    func fetchStores() {
-        guard let url = URL(string: "AddURL") else {
-            return
-        }
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                if let decodedResponse = try? JSONDecoder().decode([StoreType].self, from: data) {
-                    DispatchQueue.main.async {
-                        storesAPI = decodedResponse
-                    }
-                    return
+            service.fetchStores { result in
+                switch result {
+                case .success(let stores):
+                    storesAPI = stores
+                case .failure(let error):
+                    print("Error: \(error)")
                 }
             }
-
-            print("Fetch failed: \(error?.localizedDescription ?? "Unknown error")")
-        }.resume()  
-        
-
-    
-    }   
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
