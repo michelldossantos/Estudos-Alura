@@ -62,8 +62,8 @@
             filePath = "Chef Delivery SwiftUI/Home/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "fetchStores()"
             landmarkType = "7">
             <Locations>
@@ -95,6 +95,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "43"
                   endingLineNumber = "43"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "9DB4D71E-7E9A-43C6-8F8F-28F4A537CC7A - be999eba7658d5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Chef_Delivery_SwiftUI.ContentView.fetchStores() -&gt; ()"
+                  moduleName = "Chef Delivery SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/Chef%20Delivery%20SwiftUI/Chef%20Delivery%20SwiftUI/Home/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
                   offsetFromSymbolStart = "64">
                </Location>
             </Locations>
