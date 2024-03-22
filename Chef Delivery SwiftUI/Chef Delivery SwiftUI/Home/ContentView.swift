@@ -26,14 +26,23 @@ struct ContentView: View {
             }
             .padding()
         }.onAppear {
-            service.fetchStores { result in
-                switch result {
-                case .success(let stores):
-                    storesAPI = stores
-                case .failure(let error):
-                    print("Error: \(error)")
-                }
+            Task {
+                await getStores()
             }
+        }
+    }
+    
+    func getStores() async {
+        do {
+            let result = try await service.fetchStores()
+            switch result {
+            case .success(let stores):
+                storesAPI = stores
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        } catch {
+            print("Error fetching stores: \(error)")
         }
     }
 }
