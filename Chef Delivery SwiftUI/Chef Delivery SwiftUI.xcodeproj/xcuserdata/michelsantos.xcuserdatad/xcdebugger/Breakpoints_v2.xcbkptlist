@@ -52,5 +52,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9DB4D71E-7E9A-43C6-8F8F-28F4A537CC7A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chef Delivery SwiftUI/Home/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "fetchStores()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9DB4D71E-7E9A-43C6-8F8F-28F4A537CC7A - f9f9c1303cc13e2a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Chef_Delivery_SwiftUI.ContentView.fetchStores() -&gt; ()"
+                  moduleName = "Chef Delivery SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/Chef%20Delivery%20SwiftUI/Chef%20Delivery%20SwiftUI/Home/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "9DB4D71E-7E9A-43C6-8F8F-28F4A537CC7A - be999eba765859"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Chef_Delivery_SwiftUI.ContentView.fetchStores() -&gt; ()"
+                  moduleName = "Chef Delivery SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/Chef%20Delivery%20SwiftUI/Chef%20Delivery%20SwiftUI/Home/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

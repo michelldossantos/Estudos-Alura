@@ -11,7 +11,7 @@ struct StoreItemList: View {
     let stores: [StoreType]
     @State private var ratingFilter = 0
     var filteredStore: [StoreType] {
-        return storesMock.filter { store in
+        return stores.filter { store in
             store.stars >= ratingFilter
         }
     }
