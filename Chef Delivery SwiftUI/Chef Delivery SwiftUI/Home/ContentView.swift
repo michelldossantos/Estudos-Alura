@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let service = HomeService()
 
-    @State private var storesAPI: [StoreType] = storesMock
+    @State private var stores: [StoreType] = storesMock
 
     var body: some View {
         NavigationView {
@@ -20,7 +20,7 @@ struct ContentView: View {
                     VStack(alignment: .leading, spacing: 20){
                         OrderTypeGrid()
                         CarouselTabView()
-                        StoreItemList(stores: storesAPI)
+                        StoreItemList(stores: stores)
                     }
                 }
             }
