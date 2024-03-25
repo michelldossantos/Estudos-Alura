@@ -11,16 +11,21 @@ struct ContentView: View {
     let service = HomeService()
 
     @State private var stores: [StoreType] = storesMock
+    @State private var isLoading = true
 
     var body: some View {
         NavigationView {
             VStack {
-                NavigationBar()
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack(alignment: .leading, spacing: 20){
-                        OrderTypeGrid()
-                        CarouselTabView()
-                        StoreItemList(stores: stores)
+                if isLoading {
+                    ProgressView()
+                } else {
+                    NavigationBar()
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack(alignment: .leading, spacing: 20){
+                            OrderTypeGrid()
+                            CarouselTabView()
+                            StoreItemList(stores: stores)
+                        }
                     }
                 }
             }
@@ -37,11 +42,14 @@ struct ContentView: View {
             let result = try await service.fetchStores()
             switch result {
             case .success(let stores):
-                storesAPI = stores
+                isLoading = false
+                self.stores = stores
             case .failure(let error):
+                isLoading = false
                 print(error.localizedDescription)
             }
         } catch {
+            isLoading = false
             print("Error fetching stores: \(error)")
         }
     }
