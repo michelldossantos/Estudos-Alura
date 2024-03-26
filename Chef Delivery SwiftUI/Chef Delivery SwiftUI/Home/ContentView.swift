@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let service = HomeService()
 
-    @State private var stores: [StoreType] = storesMock
+    @State private var stores: [StoreType] = []
     @State private var isLoading = true
 
     var body: some View {
@@ -38,8 +38,25 @@ struct ContentView: View {
     }
     
     func getStores() async {
-        do {
-            let result = try await service.fetchStores()
+        
+//        / Assync Await
+//        do {
+//            let result = try await service.fetchStores()
+//            switch result {
+//            case .success(let stores):
+//                isLoading = false
+//                self.stores = stores
+//            case .failure(let error):
+//                isLoading = false
+//                print(error.localizedDescription)
+//            }
+//        } catch {
+//            isLoading = false
+//            print("Error fetching stores: \(error)")
+//        }
+        
+        // Escaping 
+        service.fetchStoresWithStores { result in
             switch result {
             case .success(let stores):
                 isLoading = false
@@ -48,9 +65,6 @@ struct ContentView: View {
                 isLoading = false
                 print(error.localizedDescription)
             }
-        } catch {
-            isLoading = false
-            print("Error fetching stores: \(error)")
         }
     }
 }

@@ -5,6 +5,7 @@
 //  Created by Michel Santos on 21/03/24.
 //
 
+import Alamofire
 import Foundation
 
 enum APIError: Error {
@@ -24,6 +25,21 @@ struct HomeService {
             
             return .success(storesObjects)
         }
+    
+    func fetchStoresWithStores(completion: @escaping (Result<[StoreType], APIError>) -> Void) {
+        guard let url = URL(string: "https://private-072812-michelsantos.apiary-mock.com/questions") else {
+            return
+        }
+        AF.request(url).responseDecodable(of: [StoreType].self) { response in
+            switch response.result {
+            case .success(let stores):
+                completion(.success(stores))
+            case .failure(let error):
+                completion(.failure(.errorRequest(error: error.localizedDescription)))
+            }
+        }
+    }
+
 
         func confirmeOrder(product: ProductType) async throws -> Result<ConfirmeProductResponse, APIError> {
             guard let url = URL(string: "https://private-072812-michelsantos.apiary-mock.com/questions") else {
