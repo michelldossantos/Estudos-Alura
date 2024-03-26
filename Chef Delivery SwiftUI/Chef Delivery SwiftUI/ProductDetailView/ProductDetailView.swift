@@ -11,6 +11,8 @@ struct ProductDetailView: View {
     let product: ProductType
     @State private var productQuantity: Int = 1
     
+    var service = HomeService()
+    
     var body: some View {
         VStack {
             ProductDetailHeaderView(product: product)
@@ -19,9 +21,26 @@ struct ProductDetailView: View {
             Text(String(productQuantity))
             Spacer()
             ProductDetailButtonView() {
-                print(product.name)
+                Task {
+                    await confirmeOrder()
+                }
             }
                 .padding(.bottom)
+        }
+    }
+    
+    func confirmeOrder() async {
+        do {
+            let response = try await service.confirmeOrder(product: product)
+            switch response {
+            case .success(let result):
+                print(result.message)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+        catch {
+            print(error.localizedDescription)
         }
     }
 }
