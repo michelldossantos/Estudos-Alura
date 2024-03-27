@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductDetailView: View {
     let product: ProductType
     @State private var productQuantity: Int = 1
+    @State private var isAlertProductSend = false
     
     var service = HomeService()
     
@@ -26,7 +27,8 @@ struct ProductDetailView: View {
                 }
             }
                 .padding(.bottom)
-        }
+        }.alert(isPresented: $isAlertProductSend) {
+            Alert(title: Text("Pedido enviado com sucesso"))        }
     }
     
     func confirmeOrder() async {
@@ -34,6 +36,7 @@ struct ProductDetailView: View {
             let response = try await service.confirmeOrder(product: product)
             switch response {
             case .success(let result):
+                isAlertProductSend = true
                 print(result.message)
             case .failure(let error):
                 print(error.localizedDescription)

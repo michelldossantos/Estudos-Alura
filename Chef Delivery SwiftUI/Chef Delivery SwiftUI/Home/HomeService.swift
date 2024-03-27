@@ -15,7 +15,7 @@ enum APIError: Error {
 
 struct HomeService {
         func fetchStores() async throws -> Result<[StoreType], APIError> {
-            guard let url = URL(string: "anyURL") else {
+            guard let url = URL(string: "https://private-072812-michelsantos.apiary-mock.com/questions") else {
                 return .failure(.invalidURL)
             }
             let request = URLRequest(url: url)

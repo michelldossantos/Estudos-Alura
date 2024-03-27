@@ -34,28 +34,28 @@ struct ContentView: View {
             Task {
                 await getStores()
             }
+//            getStoreWithAlamofire()
         }
     }
     
     func getStores() async {
-        
-//        / Assync Await
-//        do {
-//            let result = try await service.fetchStores()
-//            switch result {
-//            case .success(let stores):
-//                isLoading = false
-//                self.stores = stores
-//            case .failure(let error):
-//                isLoading = false
-//                print(error.localizedDescription)
-//            }
-//        } catch {
-//            isLoading = false
-//            print("Error fetching stores: \(error)")
-//        }
-        
-        // Escaping 
+        do {
+            let result = try await service.fetchStores()
+            switch result {
+            case .success(let stores):
+                isLoading = false
+                self.stores = stores
+            case .failure(let error):
+                isLoading = false
+                print(error.localizedDescription)
+            }
+        } catch {
+            isLoading = false
+            print("Error fetching stores: \(error)")
+        }
+    }
+    
+    func getStoreWithAlamofire() {
         service.fetchStoresWithStores { result in
             switch result {
             case .success(let stores):
