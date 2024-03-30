@@ -232,70 +232,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "18"
             endingLineNumber = "18"
-            landmarkName = "getAllSpecialists()"
+            landmarkName = "getImages(from:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2D229008-646A-4CB8-8B38-74BE89709927 - 20116e2afd7e36e9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
-                  moduleName = "Vollmed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "2D229008-646A-4CB8-8B38-74BE89709927 - 7aae190cddcfb341"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
-                  moduleName = "Vollmed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "2D229008-646A-4CB8-8B38-74BE89709927 - 20116e2afd7e36e9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
-                  moduleName = "Vollmed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "2D229008-646A-4CB8-8B38-74BE89709927 - 20116e2afd7e36e9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
-                  moduleName = "Vollmed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
