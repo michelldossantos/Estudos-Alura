@@ -11,6 +11,7 @@ enum APIError: Error {
     case invalidURL
     case requestFailed
     case decodingFailed
+    case imageNil
 }
 
 struct WebService {
@@ -18,6 +19,16 @@ func getImages(from urlImage: String) async throws -> Result<UIImage?, APIError>
     guard let url = URL(string: urlImage) else {
         return .failure(.invalidURL)
     }
+    
+
+    if let cachedResponse = URLSession.shared.configuration.urlCache?.cachedResponse(for: URLRequest(url: url)) {
+        let image = UIImage(data: cachedResponse.data)
+        return .success(image)
+    }
+    
+//    if let cachedImage = imageCache.object(forKey: urlImage as NSString) {
+//        return .success(cachedImage)
+//    }
     
     do {
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -27,7 +38,14 @@ func getImages(from urlImage: String) async throws -> Result<UIImage?, APIError>
             return .failure(.requestFailed)
         }
         
-        let image = UIImage(data: data)
+        guard let image = UIImage(data: data) else {
+            return .failure(.imageNil)
+        }
+        
+        // Cache the image
+        let cachedResponse = CachedURLResponse(response: response, data: data)
+        URLSession.shared.configuration.urlCache?.storeCachedResponse(cachedResponse, for: URLRequest(url: url))
+//        imageCache.setObject(image, forKey: urlImage as NSString)
         
         return .success(image)
     } catch {
@@ -66,3 +84,5 @@ struct SpecialistEndpoint {
         return ("\(baseURL)/especialista")
     }
 }
+
+//let imageCache = NSCache<NSString, UIImage>()

@@ -7,17 +7,94 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "06E75119-4D4B-4BCD-BC92-A12E5A41F388"
+            uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Vollmed/Views/Components/SpecialistCardView.swift"
+            filePath = "Vollmed/Services/WebService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "getspecialistImage()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "getImages(from:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - 7aae190cddcfaf23"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - 20116e2afd7e2a8b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - c478616ba6a3bdb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.getImages(from: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Optional&lt;__C.UIImage&gt;, Vollmed.APIError&gt;"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - c478616ba6a3bdb0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.getImages(from: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Optional&lt;__C.UIImage&gt;, Vollmed.APIError&gt;"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1076">
+               </Location>
+               <Location
+                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - c478616ba6a3bdf2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.getImages(from: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Optional&lt;__C.UIImage&gt;, Vollmed.APIError&gt;"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "1064">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
