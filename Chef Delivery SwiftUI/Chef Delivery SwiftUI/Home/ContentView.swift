@@ -32,9 +32,9 @@ struct ContentView: View {
             .padding()
         }.onAppear {
             Task {
-                await getStores()
+//                await getStores()
             }
-//            getStoreWithAlamofire()
+            getStoreWithAlamofire()
         }
     }
     
