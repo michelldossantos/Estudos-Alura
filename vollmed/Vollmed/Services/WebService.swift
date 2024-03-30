@@ -13,7 +13,11 @@ enum APIError: Error {
 
 struct WebService {
     func  getAllSpecialists() async throws -> Result<[Specialist], APIError> {
-        let url = SpecialistEndpoint.getAllSpecialists()
+        let endpoint = SpecialistEndpoint.getAllSpecialists()
+        
+        guard let url = URL(string: endpoint) else {
+            return .failure(.invalidURL)
+        }
         
         let (data, _) = try await URLSession.shared.data(from: url)
         let specialists = try JSONDecoder().decode([Specialist].self, from: data)
@@ -25,7 +29,7 @@ struct WebService {
 struct SpecialistEndpoint {
     static let baseURL = "http://localhost:3000"
     
-    static func getAllSpecialists() -> URL {
-        return URL(string: baseURL + "/especialistas")!
+    static func getAllSpecialists() -> String {
+        return ("\(baseURL)/especialistas")
     }
 }
