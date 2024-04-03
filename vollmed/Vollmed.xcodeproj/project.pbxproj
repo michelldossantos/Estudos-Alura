@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A0833CE2BBCF32300E5EF18 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833CD2BBCF32300E5EF18 /* Date+.swift */; };
+		0A0833D02BBCF49500E5EF18 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833CF2BBCF49500E5EF18 /* String+.swift */; };
 		0A812E932BBB9AF90031BF39 /* ScheduleAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A812E922BBB9AF90031BF39 /* ScheduleAppointmentView.swift */; };
 		484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BEEFC2AB0F5750033C07A /* Specialist.swift */; };
 		484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BEEFE2AB0F59D0033C07A /* WebService.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		0A0833CD2BBCF32300E5EF18 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		0A0833CF2BBCF49500E5EF18 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0A812E922BBB9AF90031BF39 /* ScheduleAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentView.swift; sourceTree = "<group>"; };
 		484BEEFC2AB0F5750033C07A /* Specialist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialist.swift; sourceTree = "<group>"; };
 		484BEEFE2AB0F59D0033C07A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				0A0833CD2BBCF32300E5EF18 /* Date+.swift */,
+				0A0833CF2BBCF49500E5EF18 /* String+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			files = (
 				0A0833CE2BBCF32300E5EF18 /* Date+.swift in Sources */,
 				48539DEF2AB0F47C005BD7C9 /* ContentView.swift in Sources */,
+				0A0833D02BBCF49500E5EF18 /* String+.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
