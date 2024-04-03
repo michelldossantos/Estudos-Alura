@@ -17,13 +17,12 @@ struct ScheduleAppointmentView: View {
                 .bold()
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.accent)
-            Text(selectedDate.description)
             
-            DatePicker("Escolha a data da consulta", selection: $selectedDate)
+            DatePicker("Escolha a data da consulta", selection: $selectedDate, in: Date()...)
                 .datePickerStyle(.graphical)
             
             Button(action: {
-                print("Agendar consulta \(selectedDate.description)")
+                print("Agendar consulta \(selectedDate.convertToString())")
             }, label: {
                 ButtonView(text: "Agendar")
             })
