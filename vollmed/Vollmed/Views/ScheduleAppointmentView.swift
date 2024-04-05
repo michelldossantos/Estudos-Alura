@@ -8,7 +8,29 @@
 import SwiftUI
 
 struct ScheduleAppointmentView: View {
+    let service = WebService()
+    var specialistId: String
+    
     @State private var selectedDate = Date()
+    @State private var isShowAlert = false
+    @State private var isAppointmentScheduled = false
+    
+    func scheduleAppointment() async {
+        do {
+             let result = try await service.scheduleAppointment(specialistID: specialistId,
+                                              patientID: patientID,
+                                              date: selectedDate.convertToString())
+            
+            switch result {
+            case .success(let result):
+                print("#### + \(result)")
+            case .failure:
+                print("Algo deu errado")
+            }
+        } catch {
+            print("Algo deu Errado")
+        }
+    }
     
     var body: some View {
         VStack {
@@ -23,6 +45,9 @@ struct ScheduleAppointmentView: View {
             
             Button(action: {
                 print("Agendar consulta \(selectedDate.convertToString().converterDateStringToReadableDate())")
+                Task {
+                    await scheduleAppointment()
+                }
             }, label: {
                 ButtonView(text: "Agendar")
             })
@@ -36,5 +61,5 @@ struct ScheduleAppointmentView: View {
 }
 
 #Preview {
-    ScheduleAppointmentView()
+    ScheduleAppointmentView(specialistId: "1234")
 }

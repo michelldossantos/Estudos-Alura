@@ -14,6 +14,8 @@ enum APIError: Error {
     case imageNil
 }
 
+let patientID = "b26a74c0-44ce-4084-8585-a16aff125d18"
+
 struct WebService {
     func scheduleAppointment(specialistID: String, 
                              patientID: String,
