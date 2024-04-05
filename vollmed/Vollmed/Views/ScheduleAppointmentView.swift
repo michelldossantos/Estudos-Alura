@@ -24,12 +24,16 @@ struct ScheduleAppointmentView: View {
             switch result {
             case .success(let result):
                 print("#### + \(result)")
+                isAppointmentScheduled = true
             case .failure:
-                print("Algo deu errado")
+                print("@@@@Algo deu errado")
+                isAppointmentScheduled = false
             }
         } catch {
-            print("Algo deu Errado")
+            print("###Algo deu Errado")
+            isAppointmentScheduled = false
         }
+        isShowAlert = true
     }
     
     var body: some View {
@@ -56,6 +60,13 @@ struct ScheduleAppointmentView: View {
         .navigationTitle("Agendar Consulta")
         .onAppear {
             UIDatePicker.appearance().minuteInterval = 15
+        }
+        .alert(isAppointmentScheduled ? "Sucesso" : "Ops, Algo deu errado", isPresented: $isShowAlert, presenting: isAppointmentScheduled) { _ in
+            Button(action: {}) {
+                Text("ok")
+            }
+        } message: { isScheduled in
+            Text(isScheduled ? "Consulta agendada com sucesso" : "Algo deu errado ao agendar a consulta")
         }
     }
 }

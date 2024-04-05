@@ -18,81 +18,116 @@
             endingLineNumber = "76"
             landmarkName = "getImages(from:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8C54D02-B759-477A-8FE5-8A9733333EF5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vollmed/Views/ScheduleAppointmentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "scheduleAppointment()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B394D65-F38D-4B04-AF6E-3366D40BCAA2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vollmed/Views/ScheduleAppointmentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "scheduleAppointment()"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - 7aae190cddcfaf23"
+                  uuid = "0B394D65-F38D-4B04-AF6E-3366D40BCAA2 - 1a69c815e9258381"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
+                  symbolName = "(3) suspend resume partial function for Vollmed.ScheduleAppointmentView.scheduleAppointment() async -&gt; ()"
                   moduleName = "Vollmed"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Views/ScheduleAppointmentView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "152">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "184">
                </Location>
                <Location
-                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - 20116e2afd7e2a8b"
+                  uuid = "0B394D65-F38D-4B04-AF6E-3366D40BCAA2 - 1a69c815e9258381"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.getAllSpecialists() async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.Specialist&gt;, Vollmed.APIError&gt;"
+                  symbolName = "(3) suspend resume partial function for Vollmed.ScheduleAppointmentView.scheduleAppointment() async -&gt; ()"
                   moduleName = "Vollmed"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Views/ScheduleAppointmentView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "260">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3F77D380-2B50-46AE-8A15-072AD69440AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vollmed/Views/ScheduleAppointmentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "scheduleAppointment()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3F77D380-2B50-46AE-8A15-072AD69440AF - 1a69c815e92582a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for Vollmed.ScheduleAppointmentView.scheduleAppointment() async -&gt; ()"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Views/ScheduleAppointmentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1152">
                </Location>
                <Location
-                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - c478616ba6a3bdb0"
+                  uuid = "3F77D380-2B50-46AE-8A15-072AD69440AF - b908aaf9c56ae2a1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.getImages(from: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Optional&lt;__C.UIImage&gt;, Vollmed.APIError&gt;"
+                  symbolName = "(4) suspend resume partial function for Vollmed.ScheduleAppointmentView.scheduleAppointment() async -&gt; ()"
                   moduleName = "Vollmed"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Views/ScheduleAppointmentView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "580">
-               </Location>
-               <Location
-                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - c478616ba6a3bdb0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.getImages(from: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Optional&lt;__C.UIImage&gt;, Vollmed.APIError&gt;"
-                  moduleName = "Vollmed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "1076">
-               </Location>
-               <Location
-                  uuid = "0DB1E77B-CE11-438B-AB93-29315AF9A221 - c478616ba6a3bdf2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.getImages(from: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Optional&lt;__C.UIImage&gt;, Vollmed.APIError&gt;"
-                  moduleName = "Vollmed"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "1064">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "172">
                </Location>
             </Locations>
          </BreakpointContent>
