@@ -18,3 +18,4 @@ struct ScheduleAppointmentRequest: Codable {
         case date = "data"
     }
 }
+    
