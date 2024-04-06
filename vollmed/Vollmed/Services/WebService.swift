@@ -17,7 +17,20 @@ enum APIError: Error {
 let patientID = "b26a74c0-44ce-4084-8585-a16aff125d18"
 
 struct WebService {
-    func scheduleAppointment(specialistID: String, 
+    func getAllAppointments(patientID: String) async throws -> Result<[AppointmentResult], APIError> {
+        let endpoint = SpecialistEndpoint.getAllAppointments(patientID: patientID)
+        
+        guard let url = URL(string: endpoint) else {
+            return .failure(.invalidURL)
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let appointments = try JSONDecoder().decode([AppointmentResult].self, from: data)
+        
+        return .success(appointments)
+    }
+    
+    func scheduleAppointment(specialistID: String,
                              patientID: String,
                              date: String) async throws -> Result<ScheduleAppointmentResponse, APIError> {
         let endpoint = SpecialistEndpoint.postAppointment()
@@ -115,6 +128,8 @@ struct SpecialistEndpoint {
     static func postAppointment() -> String {
         return ("\(baseURL)/consulta")
     }
+    
+    static func getAllAppointments(patientID: String) -> String {
+        return ("\(baseURL)/paciente/\(patientID)/consultas")
+    }
 }
-
-//let imageCache = NSCache<NSString, UIImage>()
