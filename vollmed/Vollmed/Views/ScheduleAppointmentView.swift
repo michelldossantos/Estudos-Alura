@@ -10,16 +10,37 @@ import SwiftUI
 struct ScheduleAppointmentView: View {
     let service = WebService()
     var specialistId: String
+    var isRescheduleView: Bool
+    var appointmentID: String?
     
     @State private var selectedDate = Date()
     @State private var isShowAlert = false
     @State private var isAppointmentScheduled = false
     
+    init(specialistId: String, 
+         isRescheduleView: Bool = false,
+         appointmentID: String? = nil) {
+        self.specialistId = specialistId
+        self.isRescheduleView = isRescheduleView
+        self.appointmentID = appointmentID
+    }
+    
+    func rescheduleAppointment() async {
+        guard let appointmentID else {
+            print("Houve um erro ao obter a conulta do ID")
+            return
+        }
+        
+        print(appointmentID)
+    }
+    
     func scheduleAppointment() async {
         do {
-             let result = try await service.scheduleAppointment(specialistID: specialistId,
-                                              patientID: patientID,
-                                              date: selectedDate.convertToString())
+            let result = try await service.scheduleAppointment(
+                specialistID: specialistId,
+                patientID: patientID,
+                date: selectedDate.convertToString()
+            )
             
             switch result {
             case .success(let result):
@@ -50,14 +71,18 @@ struct ScheduleAppointmentView: View {
             Button(action: {
                 print("Agendar consulta \(selectedDate.convertToString().converterDateStringToReadableDate())")
                 Task {
-                    await scheduleAppointment()
+                    if isRescheduleView {
+                        await rescheduleAppointment()
+                    } else {
+                        await scheduleAppointment()
+                    }
                 }
             }, label: {
-                ButtonView(text: "Agendar")
+                ButtonView(text: isRescheduleView ? "Reagendar" : "Agendar")
             })
         }
         .padding()
-        .navigationTitle("Agendar Consulta")
+        .navigationTitle(isRescheduleView ? "Reagendar Consulta" : "Agendar Consulta")
         .onAppear {
             UIDatePicker.appearance().minuteInterval = 15
         }
@@ -66,11 +91,11 @@ struct ScheduleAppointmentView: View {
                 Text("ok")
             }
         } message: { isScheduled in
-            Text(isScheduled ? "Consulta agendada com sucesso" : "Algo deu errado ao agendar a consulta")
+            Text(isScheduled ? "Consulta \(isRescheduleView ? "reagendar" : "agendar") com sucesso" : "Algo deu errado ao \(isRescheduleView ? "reagendada" : "agendada") a consulta")
         }
     }
 }
 
 #Preview {
-    ScheduleAppointmentView(specialistId: "1234")
+    ScheduleAppointmentView(specialistId: "1234", appointmentID: "123123")
 }

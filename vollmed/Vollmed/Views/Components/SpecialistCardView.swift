@@ -55,8 +55,10 @@ struct SpecialistCardView: View {
             }
             if let appointment {
                 HStack {
-                    Button {
-                        print("Botão pressionado")
+                    NavigationLink {
+                        ScheduleAppointmentView(specialistId: appointment.specialist.id,
+                                                isRescheduleView: true,
+                                                appointmentID: appointment.id)
                     } label: {
                         ButtonView(text: "Remarcar")
                     }
