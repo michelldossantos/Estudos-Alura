@@ -173,8 +173,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "scheduleAppointment()"
-            landmarkType = "7">
+            landmarkName = "ScheduleAppointmentView"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "3F77D380-2B50-46AE-8A15-072AD69440AF - 1a69c815e92582a6"
