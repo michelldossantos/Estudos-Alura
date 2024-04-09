@@ -136,6 +136,35 @@ struct WebService {
 
         return .success(appointmentReponse)
     }
+
+    func cancelAppointment(appointmentID: String, reasonToCancel: String) async throws -> Result<String, APIError> {
+        let endpoint = SpecialistEndpoint.cancelAppointment(appointmentID: appointmentID)
+        guard let url = URL(string: endpoint) else {
+            return .failure(.invalidURL)
+        }
+        
+        let requestData: [String: String] =  ["motivo_cancelamento": reasonToCancel]
+        let jsonData = try JSONSerialization.data(withJSONObject: requestData)
+        
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+            return .failure(.requestFailed)
+        }
+
+        guard let responseString = String(data: data, encoding: .utf8) else {
+            return .failure(.decodingFailed)
+        }
+
+        return .success(responseString)
+    }
 }
 
 struct SpecialistEndpoint {
@@ -154,6 +183,10 @@ struct SpecialistEndpoint {
     }
     
     static func rescheduleAppointment(appointmentID: String) -> String {
+        return ("\(baseURL)/consulta/\(appointmentID)")
+    }
+
+    static func cancelAppointment(appointmentID: String) -> String {
         return ("\(baseURL)/consulta/\(appointmentID)")
     }
 }
