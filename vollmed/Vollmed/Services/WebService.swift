@@ -116,6 +116,26 @@ struct WebService {
             return .failure(.decodingFailed)
         }
     }
+    
+    func rescheduleAppointment(appointmentID: String, date: String) async throws -> Result<ScheduleAppointmentResponse, APIError> {
+        let endpoint = SpecialistEndpoint.rescheduleAppointment(appointmentID: appointmentID)
+        guard let url = URL(string: endpoint) else {
+            return .failure(.invalidURL)
+        }
+        
+        let requestData: [String: String] = ["data": date]
+        let jsonData = try JSONSerialization.data(withJSONObject: requestData)
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "Patch"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let appointmentReponse = try JSONDecoder().decode(ScheduleAppointmentResponse.self, from: data)
+
+        return .success(appointmentReponse)
+    }
 }
 
 struct SpecialistEndpoint {
@@ -131,5 +151,9 @@ struct SpecialistEndpoint {
     
     static func getAllAppointments(patientID: String) -> String {
         return ("\(baseURL)/paciente/\(patientID)/consultas")
+    }
+    
+    static func rescheduleAppointment(appointmentID: String) -> String {
+        return ("\(baseURL)/consulta/\(appointmentID)")
     }
 }

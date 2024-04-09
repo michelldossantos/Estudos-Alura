@@ -31,7 +31,25 @@ struct ScheduleAppointmentView: View {
             return
         }
         
-        print(appointmentID)
+        do {
+            let result = try await service.rescheduleAppointment(
+                appointmentID: appointmentID,
+                date: selectedDate.convertToString()
+            )
+            
+            switch result {
+            case .success(let result):
+                print("#### + \(result)")
+                isAppointmentScheduled = true
+            case .failure:
+                print("@@@@Algo deu errado")
+                isAppointmentScheduled = false
+            }
+        } catch {
+            print("###Algo deu Errado")
+            isAppointmentScheduled = false
+        }
+        isShowAlert = true
     }
     
     func scheduleAppointment() async {
