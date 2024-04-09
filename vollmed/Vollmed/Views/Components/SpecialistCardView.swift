@@ -64,7 +64,7 @@ struct SpecialistCardView: View {
                     }
                     
                     NavigationLink {
-                        CancelAppointmentView(appintmentID: appointment.id)
+                        CancelAppointmentView(appointmentID: appointment.id)
                     } label: {
                         ButtonView(text: "Cancelar", buttonType: .cancel)
                     }

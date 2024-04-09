@@ -8,15 +8,37 @@
 import SwiftUI
 
 struct CancelAppointmentView: View {
-    private let appintmentID: String
+    private let appointmentID: String
     let service = WebService()
     
     @State private var reasontocancel = ""
     @State private var isShowAlert = false
     @State private var isCancelAppointment = false
     
-    init(appintmentID: String) {
-        self.appintmentID = appintmentID
+    private func cancelAppoitment() async {
+        do {
+            let result = try await service.cancelAppointment(
+                appointmentID: appointmentID,
+                reasonToCancel: reasontocancel
+            )
+            
+            switch result {
+            case .success:
+                print("Consulta cancelada com sucesso")
+                isCancelAppointment = true
+            case .failure:
+                isCancelAppointment = false
+            }
+            
+            isShowAlert = true
+        } catch {
+            //TODO:
+        }
+
+    }
+    
+    init(appointmentID: String) {
+        self.appointmentID = appointmentID
     }
     var body: some View {
         VStack(spacing: 16.0) {
@@ -38,20 +60,7 @@ struct CancelAppointmentView: View {
             
             Button(action: {
                 Task {
-                    let result = try await service.cancelAppointment(
-                        appointmentID: appintmentID,
-                        reasonToCancel: reasontocancel
-                    )
-                    
-                    switch result {
-                    case .success:
-                        print("Consulta cancelada com sucesso")
-                        isCancelAppointment = true
-                    case .failure:
-                        isCancelAppointment = false
-                    }
-                    
-                    isShowAlert = true
+                    await cancelAppoitment()
                 }
             },
                    label: {
@@ -63,8 +72,8 @@ struct CancelAppointmentView: View {
         .navigationTitle("Cancelar consulta")
         .navigationBarTitleDisplayMode(.large)
         .alert(isCancelAppointment ? "Sucesso" : "Erro", isPresented: $isShowAlert, presenting: isCancelAppointment) { _ in
-            NavigationLink(destination: {
-                HomeView()
+            Button(action: {
+//            TODO: Dismiss view
             }) {
                 Text("ok")
             }
@@ -75,5 +84,5 @@ struct CancelAppointmentView: View {
 }
 
 #Preview {
-    CancelAppointmentView(appintmentID: "123123")
+    CancelAppointmentView(appointmentID: "123123")
 }
