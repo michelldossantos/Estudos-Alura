@@ -78,7 +78,9 @@ struct SignInView: View {
 //                    ButtonView(text: "Cadastro")
                 }
             }
-        }.padding()
+        }
+        .padding()
+        .navigationBarBackButtonHidden()
     }
 }
 
