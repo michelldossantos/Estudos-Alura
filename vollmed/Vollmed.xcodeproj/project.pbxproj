@@ -67,14 +67,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		0A5143152BC6A1F100760413 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0A812E922BBB9AF90031BF39 /* ScheduleAppointmentView.swift */,
+				484BEF042AB0F7970033C07A /* HomeView.swift */,
+				0AB0449E2BC0CCAB0004956A /* MyAppointmentsView.swift */,
+				0A2AD46C2BC4D1DE00F90B9B /* CancelAppointmentView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		484BEEF82AB0F55F0033C07A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0A5143152BC6A1F100760413 /* Scenes */,
 				484BEEF92AB0F5630033C07A /* Components */,
-				484BEF042AB0F7970033C07A /* HomeView.swift */,
-				0A812E922BBB9AF90031BF39 /* ScheduleAppointmentView.swift */,
-				0AB0449E2BC0CCAB0004956A /* MyAppointmentsView.swift */,
-				0A2AD46C2BC4D1DE00F90B9B /* CancelAppointmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

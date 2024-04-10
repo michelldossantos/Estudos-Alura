@@ -32,7 +32,7 @@ struct MyAppointmentsView: View {
             if appointments.isEmpty {
                 Text("Não há nenhuma consulta agendada no momento!")
                     .font(.title2)
-                    .bold()
+                    .bold() 
                     .foregroundStyle(Color.cancel)
                     .multilineTextAlignment(.center)
                     .padding()
