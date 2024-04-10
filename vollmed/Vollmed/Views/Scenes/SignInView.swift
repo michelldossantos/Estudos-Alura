@@ -65,9 +65,18 @@ struct SignInView: View {
             }
             
             NavigationLink {
-                //TODO
+                SignUpView()
             } label: {
-                ButtonView(text: "Cadastro")
+                VStack {
+                    Text("Ainda não possui uma conta? Cadastre-se!")
+//                                            .font(.title3)
+                        .bold()
+//                        .foregroundStyle(.gray)
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    
+                    
+//                    ButtonView(text: "Cadastro")
+                }
             }
         }.padding()
     }
