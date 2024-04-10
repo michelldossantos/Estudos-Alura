@@ -57,6 +57,18 @@ struct SignInView: View {
                 .background(Color.gray.opacity(0.25))
                 .cornerRadius(14.0)
                 .textInputAutocapitalization(.never)
+            
+            Button {
+                //TODO
+            } label: {
+                ButtonView(text: "Entrar")
+            }
+            
+            NavigationLink {
+                //TODO
+            } label: {
+                ButtonView(text: "Cadastro")
+            }
         }.padding()
     }
 }
