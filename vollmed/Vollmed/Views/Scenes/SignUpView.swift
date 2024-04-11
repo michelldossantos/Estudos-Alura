@@ -32,82 +32,59 @@ struct SignUpView: View {
                     .frame(maxWidth: .infinity, maxHeight: 36.0, alignment: .center)
                     .padding(.vertical)
                 
-                Text("Olá, boas-vindas!")
-                    .font(.title2)
-                    .bold()
-                    .foregroundStyle(.accent)
+                TextDefaultView(
+                    text: "Olá, boas-vindas!",
+                    font: .title2
+                )
                 
-                Text("Insira seus dados para criar uma conta.")
-                    .font(.title3)
-                    .foregroundStyle(.gray)
-                    .padding(.bottom)
+                TextDefaultView(
+                    text: "Insira seus dados para criar uma conta.",
+                    isBold: false,
+                    foreGroundColor: .gray
+                ).padding(.bottom)
+                     
+                TextDefaultView(text: "Nome")
                 
-                Text("Nome")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
+                FieldView(
+                    text: $name,
+                    placeHolder: "Insira seu nome",
+                    autocorrection: false
+                )
                 
-                TextField("Insita seu nome", text: $name)
-                    .padding(14)
-                    .bold()
-                    .autocorrectionDisabled()
-                    .background(Color.gray.opacity(0.25))
-                    .cornerRadius(14.0)
-
+                TextDefaultView(text: "Email")
                 
-                Text("Email")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
+                FieldView(
+                    text: $email,
+                    placeHolder: "Insira seu email",
+                    keyboardType: .emailAddress,
+                    autocorrection: false
+                )
+                                
+                TextDefaultView(text: "Cpf")
                 
-                TextField("Insira seu email", text: $email)
-                    .padding()
-                    .bold()
-                    .autocorrectionDisabled()
-                    .background(Color.gray.opacity(0.25))
-                    .cornerRadius(14.0)
-                    .keyboardType(.emailAddress)
-                    .textInputAutocapitalization(.never)
+                FieldView(
+                    text: $cpf,
+                    placeHolder: "Insira seu CPF",
+                    keyboardType: .numberPad
+                )
                 
-                Text("CPF")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
+                TextDefaultView(text: "Telefone")
                 
-                TextField("Insira seu CPF", text: $cpf)
-                    .padding()
-                    .bold()
-                    .background(Color.gray.opacity(0.25))
-                    .cornerRadius(14.0)
-                    .keyboardType(.numberPad)
+                FieldView(
+                    text: $phoneNumber,
+                    placeHolder: "Insira seu telefone",
+                    keyboardType: .numberPad
+                )
                 
-                Text("Telefone")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
+                TextDefaultView(text: "Senha")
                 
-                TextField("Insira seu telefone", text: $phoneNumber)
-                    .padding(14)
-                    .bold()
-                    .background(Color.gray.opacity(0.25))
-                    .cornerRadius(14.0)
-                    .keyboardType(.numberPad)
-                
-                Text("Senha")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
-                
-                SecureField("Insita sua Senha", text: $password)
-                    .padding(14)
-                    .bold()
-                    .background(Color.gray.opacity(0.25))
-                    .cornerRadius(14.0)
-                
-                Text("Selecione seu plano de saúde")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
+                FieldView(
+                    text: $password,
+                    placeHolder: "Insita sua Senha",
+                    isSecure: true
+                )
+                                
+                TextDefaultView(text: "Selecione seu plano de saúde")
                 
                 Picker("Selecione seu Plano", selection: $healthPlan) {
                     ForEach(healthPlans, id: \.self) { plan in

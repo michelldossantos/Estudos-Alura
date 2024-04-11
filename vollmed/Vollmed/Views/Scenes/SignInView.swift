@@ -18,45 +18,27 @@ struct SignInView: View {
                 .scaledToFit()
                 .frame(maxWidth: .infinity, maxHeight: 36.0, alignment: .center)
             
-            Text("Olá")
-                .font(.title2)
-                .bold()
-                .foregroundStyle(.accent)
+            TextDefaultView(
+                text: "Olá",
+                font: .title2
+            )
             
-            Text("Preencha para acessar sua conta")
-                .font(.title3)
-                .bold()
-                .foregroundStyle(.gray)
-                .padding(.bottom)
+            TextDefaultView(
+                text: "Preencha para acessar sua conta",
+                foreGroundColor: .gray
+            ).padding(.bottom)
             
-            Text("Email")
-                .font(.title3)
-                .bold()
-                .foregroundStyle(.accent)
-                .padding(.bottom)
+            TextDefaultView(text: "Email")
+                .padding(.top)
             
-            TextField("Digite seu email", text: $email)
-                .padding()
-                .bold()
-                .autocorrectionDisabled()
-                .background(Color.gray.opacity(0.25))
-                .cornerRadius(14.0)
-                .keyboardType(.emailAddress)
-                .textInputAutocapitalization(.never)
-
-            Text("Senha")
-                .font(.title3)
-                .bold()
-                .foregroundStyle(.accent)
-                .padding(.bottom)
+            FieldView(
+                text: $email,
+                placeHolder: "Digite seu email"
+            )
+            TextDefaultView(text: "Senha")
+                .padding(.top)
             
-            SecureField("Digite sua Senha", text: $senha)
-                .padding()
-                .bold()
-                .autocorrectionDisabled()
-                .background(Color.gray.opacity(0.25))
-                .cornerRadius(14.0)
-                .textInputAutocapitalization(.never)
+            FieldView(text: $senha, placeHolder: "Digite sua senha", isSecure: true)
             
             Button {
                 //TODO
@@ -68,14 +50,17 @@ struct SignInView: View {
                 SignUpView()
             } label: {
                 VStack {
-                    Text("Ainda não possui uma conta? Cadastre-se!")
-//                                            .font(.title3)
-                        .bold()
-//                        .foregroundStyle(.gray)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                    
-                    
-//                    ButtonView(text: "Cadastro")
+                    TextDefaultView(
+                        text: "Ainda não possui uma conta? Cadastre-se!",
+                        font: .headline,
+                        isBold: false,
+                        foreGroundColor: .gray
+                    )
+                    .frame(
+                        maxWidth: .infinity,
+                        alignment: .center
+                    )
+
                 }
             }
         }
