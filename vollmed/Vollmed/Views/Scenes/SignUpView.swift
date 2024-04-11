@@ -118,17 +118,24 @@ struct SignUpView: View {
             }
             
         }
-        .padding()
+        .padding(.leading, 16)
+        .padding(.trailing, 16)
         
-        Button(action: {}, label: {
-            ButtonView(text: "Cadastrar")
-        })
-        
-        NavigationLink {
-            SignInView()
-        } label: {
-            Text("Já possui uma conta? Faça o login")
-        }.navigationBarBackButtonHidden()
+        VStack(spacing: 16) {
+            Button(action: {}, label: {
+                ButtonView(text: "Cadastrar")
+            })
+            
+            NavigationLink {
+                SignInView()
+            } label: {
+                Text("Já possui uma conta? Faça o login")
+            }.navigationBarBackButtonHidden()
+        }
+            .padding(.top, 0)
+            .padding(.leading, 16)
+            .padding(.trailing, 16)
+
     }
 }
 
