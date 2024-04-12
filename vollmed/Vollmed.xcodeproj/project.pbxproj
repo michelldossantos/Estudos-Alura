@@ -11,6 +11,7 @@
 		0A0833D02BBCF49500E5EF18 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833CF2BBCF49500E5EF18 /* String+.swift */; };
 		0A0833D22BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833D12BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift */; };
 		0A0833D42BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833D32BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift */; };
+		0A1866652BC8ADCB001B0BD9 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1866642BC8ADCB001B0BD9 /* PatientModel.swift */; };
 		0A2AD46D2BC4D1DE00F90B9B /* CancelAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD46C2BC4D1DE00F90B9B /* CancelAppointmentView.swift */; };
 		0A5143192BC6A2D100760413 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5143182BC6A2D100760413 /* SignInView.swift */; };
 		0A51431B2BC6A68600760413 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51431A2BC6A68600760413 /* SignUpView.swift */; };
@@ -35,6 +36,7 @@
 		0A0833CF2BBCF49500E5EF18 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0A0833D12BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentRequest.swift; sourceTree = "<group>"; };
 		0A0833D32BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentResponse.swift; sourceTree = "<group>"; };
+		0A1866642BC8ADCB001B0BD9 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		0A2AD46C2BC4D1DE00F90B9B /* CancelAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAppointmentView.swift; sourceTree = "<group>"; };
 		0A5143182BC6A2D100760413 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		0A51431A2BC6A68600760413 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				0A0833D12BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift */,
 				0A0833D32BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift */,
 				0AB044A02BC0D52E0004956A /* AppointmentResult.swift */,
+				0A1866642BC8ADCB001B0BD9 /* PatientModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				0A0833D02BBCF49500E5EF18 /* String+.swift in Sources */,
 				0A0833D22BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift in Sources */,
 				0AE518572BC774BB0085023C /* FieldView.swift in Sources */,
+				0A1866652BC8ADCB001B0BD9 /* PatientModel.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,

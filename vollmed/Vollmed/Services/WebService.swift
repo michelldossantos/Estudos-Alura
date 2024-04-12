@@ -165,6 +165,26 @@ struct WebService {
 
         return .success(responseString)
     }
+    
+    func registerPatient(patient: PatientModel) async throws -> Result<PatientModel, APIError> {
+        let endpoint = SpecialistEndpoint.registerPatient()
+        guard let url = URL(string: endpoint) else {
+            return .failure(.invalidURL)
+        }
+        
+        let jsonData = try JSONEncoder().encode(patient)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        let patient = try JSONDecoder().decode(PatientModel.self, from: data)
+        
+        return .success(patient)
+    }
 }
 
 struct SpecialistEndpoint {
@@ -188,5 +208,9 @@ struct SpecialistEndpoint {
 
     static func cancelAppointment(appointmentID: String) -> String {
         return ("\(baseURL)/consulta/\(appointmentID)")
+    }
+    
+    static func registerPatient() -> String {
+        return ("\(baseURL)/paciente/")
     }
 }
