@@ -18,11 +18,10 @@ struct SignUpView: View {
     @State private var password = ""
     @State private var isShowingAlert = false
     @State private var isPacientRegistered = false
-
-
+    @State private var navigationSignView = false
     
     let healthPlans = ["Unimed", "Sulamérica", "Bradesco", "Amil", "NotreDame", "Outro"]
-
+    
     init() {
         self.healthPlan = healthPlans[0]
     }
@@ -45,7 +44,7 @@ struct SignUpView: View {
             case .failure:
                 isPacientRegistered = false
             }
-
+            
         } catch {
             print("An error occurred")
         }
@@ -71,7 +70,7 @@ struct SignUpView: View {
                     isBold: false,
                     foreGroundColor: .gray
                 ).padding(.bottom)
-                     
+                
                 TextDefaultView(text: "Nome")
                 
                 FieldView(
@@ -88,7 +87,7 @@ struct SignUpView: View {
                     keyboardType: .emailAddress,
                     autocorrection: false
                 )
-                                
+                
                 TextDefaultView(text: "Cpf")
                 
                 FieldView(
@@ -112,7 +111,7 @@ struct SignUpView: View {
                     placeHolder: "Insita sua Senha",
                     isSecure: true
                 )
-                                
+                
                 TextDefaultView(text: "Selecione seu plano de saúde")
                 
                 Picker("Selecione seu Plano", selection: $healthPlan) {
@@ -120,9 +119,7 @@ struct SignUpView: View {
                         Text(plan)
                     }
                 }
-                
             }
-            
         }
         .padding(.leading, 16)
         .padding(.trailing, 16)
@@ -142,22 +139,27 @@ struct SignUpView: View {
                 Text("Já possui uma conta? Faça o login")
             }
         }
-            .padding(.top, 0)
-            .padding(.leading, 16)
-            .padding(.trailing, 16)
-            .navigationBarBackButtonHidden()
-            .alert(isPacientRegistered ? "Sucesso" : "Ops Algo deu errado",
-                   isPresented: $isShowingAlert) {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Text("Ok")
-                })
-            } message: {
-                if isPacientRegistered {
-                    Text("Cadastro realizado com sucesso")
-                } else {
-                    Text("Error ao criar cadastro")
-                }
+        .padding(.top, 0)
+        .padding(.leading, 16)
+        .padding(.trailing, 16)
+        .navigationBarBackButtonHidden()
+        .alert(isPacientRegistered ? "Sucesso" : "Ops Algo deu errado",
+               isPresented: $isShowingAlert) {
+            Button(action: {
+                navigationSignView = true
+            }, label: {
+                Text("Ok")
+            })
+        } message: {
+            if isPacientRegistered {
+                Text("Cadastro realizado com sucesso")
+            } else {
+                Text("Error ao criar cadastro")
             }
+        }
+        .navigationDestination(isPresented: $navigationSignView) {
+            SignInView()
+        }
     }
 }
 
