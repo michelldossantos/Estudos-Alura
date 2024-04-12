@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct SignUpView: View {
+    private let  service = WebService()
+    
     @State private var name = ""
     @State private var email = ""
     @State private var cpf = ""
     @State private var phoneNumber = ""
     @State private var healthPlan: String
     @State private var password = ""
+    @State private var isShowingAlert = false
+    @State private var isPacientRegistered = false
 
 
     
@@ -21,6 +25,31 @@ struct SignUpView: View {
 
     init() {
         self.healthPlan = healthPlans[0]
+    }
+    
+    func registerPatient() async {
+        let patient = PatientModel(id: nil,
+                                   cpf: cpf,
+                                   name: name,
+                                   email: email,
+                                   password: password,
+                                   phoneNumber: Int(phoneNumber) ?? 0,
+                                   healthPlan: healthPlan)
+        
+        do {
+            let result = try await service.registerPatient(patient: patient)
+            
+            switch result {
+            case .success(let patient):
+                isPacientRegistered = true
+            case .failure:
+                isPacientRegistered = false
+            }
+
+        } catch {
+            print("An error occurred")
+        }
+        isShowingAlert = true
     }
     
     var body: some View {
@@ -99,7 +128,11 @@ struct SignUpView: View {
         .padding(.trailing, 16)
         
         VStack(spacing: 16) {
-            Button(action: {}, label: {
+            Button(action: {
+                Task {
+                    await registerPatient()
+                }
+            }, label: {
                 ButtonView(text: "Cadastrar")
             })
             
@@ -107,12 +140,24 @@ struct SignUpView: View {
                 SignInView()
             } label: {
                 Text("Já possui uma conta? Faça o login")
-            }.navigationBarBackButtonHidden()
+            }
         }
             .padding(.top, 0)
             .padding(.leading, 16)
             .padding(.trailing, 16)
-
+            .navigationBarBackButtonHidden()
+            .alert(isPacientRegistered ? "Sucesso" : "Ops Algo deu errado",
+                   isPresented: $isShowingAlert) {
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Text("Ok")
+                })
+            } message: {
+                if isPacientRegistered {
+                    Text("Cadastro realizado com sucesso")
+                } else {
+                    Text("Error ao criar cadastro")
+                }
+            }
     }
 }
 
