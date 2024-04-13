@@ -185,6 +185,25 @@ struct WebService {
         
         return .success(patient)
     }
+    
+    func loginPatient(loginRequest: LoginRequest) async throws -> Result<LoginResponse, APIError> {
+        let endpoint = SpecialistEndpoint.loginRequest()
+        guard let url = URL(string: endpoint) else {
+            return .failure(.invalidURL)
+        }
+        
+        let jsonData = try JSONEncoder().encode(loginRequest)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        let loginReposnte = try JSONDecoder().decode(LoginResponse.self, from: data)
+        
+        return .success(loginReposnte)
+    }
 }
 
 struct SpecialistEndpoint {
@@ -212,5 +231,9 @@ struct SpecialistEndpoint {
     
     static func registerPatient() -> String {
         return ("\(baseURL)/paciente/")
+    }
+    
+    static func loginRequest() -> String {
+        return ("\(baseURL)/auth/login")
     }
 }

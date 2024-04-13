@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A013CE02BCA19E300F2754B /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A013CDF2BCA19E300F2754B /* UserDefaultHelper.swift */; };
 		0A0833CE2BBCF32300E5EF18 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833CD2BBCF32300E5EF18 /* Date+.swift */; };
 		0A0833D02BBCF49500E5EF18 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833CF2BBCF49500E5EF18 /* String+.swift */; };
 		0A0833D22BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833D12BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A013CDF2BCA19E300F2754B /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		0A0833CD2BBCF32300E5EF18 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		0A0833CF2BBCF49500E5EF18 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0A0833D12BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentRequest.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A013CDE2BCA19CA00F2754B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0A013CDF2BCA19E300F2754B /* UserDefaultHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0A0833CC2BBCF31300E5EF18 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 		48539DEB2AB0F47C005BD7C9 /* Vollmed */ = {
 			isa = PBXGroup;
 			children = (
+				0A013CDE2BCA19CA00F2754B /* Helpers */,
 				0A0833CC2BBCF31300E5EF18 /* Extensions */,
 				484BEEFB2AB0F56C0033C07A /* Services */,
 				484BEEFA2AB0F5680033C07A /* Models */,
@@ -258,6 +269,7 @@
 				48539DEF2AB0F47C005BD7C9 /* ContentView.swift in Sources */,
 				0A0833D02BBCF49500E5EF18 /* String+.swift in Sources */,
 				0A0833D22BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift in Sources */,
+				0A013CE02BCA19E300F2754B /* UserDefaultHelper.swift in Sources */,
 				0AE518572BC774BB0085023C /* FieldView.swift in Sources */,
 				0AEBB6B02BC94EC400149E8D /* LoginModels.swift in Sources */,
 				0A1866652BC8ADCB001B0BD9 /* PatientModel.swift in Sources */,

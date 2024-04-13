@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct SignInView: View {
+    let service = WebService()
+    
     @State private var email = ""
-    @State private var senha = ""
+    @State private var password = ""
+    
+    func login(loginRequest: LoginRequest)  async {
+        do {
+            let result = try await service.loginPatient(loginRequest: loginRequest)
+            switch result {
+            case .success(let result):
+                UserDefaultHelper.save(value: result.token, key: UserDefaultKeys.token.rawValue)
+                UserDefaultHelper.save(value: result.id, key: UserDefaultKeys.patientID.rawValue)
+                print("Login Sucesso \(result)")
+            case .failure(let error):
+                print("API error \(error.localizedDescription)")
+            }
+        } catch {
+            print("Ocorreu um erro ao fazer login")
+        }
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16.0) {
@@ -38,10 +56,14 @@ struct SignInView: View {
             TextDefaultView(text: "Senha")
                 .padding(.top)
             
-            FieldView(text: $senha, placeHolder: "Digite sua senha", isSecure: true)
+            FieldView(text: $password, placeHolder: "Digite sua senha", isSecure: true)
             
             Button {
-                //TODO
+                Task {
+                    let loginResponse: LoginRequest = .init(email: email, 
+                                                            password: password)
+                    await login(loginRequest: loginResponse)
+                }
             } label: {
                 ButtonView(text: "Entrar")
             }
@@ -60,7 +82,6 @@ struct SignInView: View {
                         maxWidth: .infinity,
                         alignment: .center
                     )
-
                 }
             }
         }
