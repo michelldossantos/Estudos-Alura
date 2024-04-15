@@ -1,25 +1,33 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("token") var token: String = ""
+    
     var body: some View {
-        TabView {
+        if token.isEmpty {
             NavigationStack {
-                HomeView()
+                SignInView()
             }
-            .tabItem {
-                Label(
-                    title: { Text("Home") },
-                    icon: { Image(systemName: "house") }
-                )
-            }
-            
-            NavigationStack {
-                MyAppointmentsView()
-            }.tabItem {
-                Label(
-                    title: { Text("Consultas") },
-                    icon: { Image(systemName: "calendar") }
-                )
+        } else {
+            TabView {
+                NavigationStack {
+                    HomeView()
+                }
+                .tabItem {
+                    Label(
+                        title: { Text("Home") },
+                        icon: { Image(systemName: "house") }
+                    )
+                }
+                
+                NavigationStack {
+                    MyAppointmentsView()
+                }.tabItem {
+                    Label(
+                        title: { Text("Consultas") },
+                        icon: { Image(systemName: "calendar") }
+                    )
+                }
             }
         }
     }
