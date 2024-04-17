@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ScheduleAppointmentView: View {
     let service = WebService()
+    let auth = AuthenticatorManager.shared
     var specialistId: String
     var isRescheduleView: Bool
     var appointmentID: String?
@@ -53,7 +54,7 @@ struct ScheduleAppointmentView: View {
     }
     
     func scheduleAppointment() async {
-        guard let patientID = KeychainHelper.getValue(key: UserDefaultKeys.patientID.rawValue) else { return }
+        guard let patientID = auth.patientId else { return }
         
         do {
             let result = try await service.scheduleAppointment(

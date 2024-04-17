@@ -9,10 +9,11 @@ import SwiftUI
 
 struct MyAppointmentsView: View {
     let service = WebService()
+    let auth = AuthenticatorManager.shared
     @State private var appointments: [AppointmentResult] = []
     
     func getAllAppointments() async {
-        guard let patientID = KeychainHelper.getValue(key: UserDefaultKeys.patientID.rawValue) else { return }
+        guard let patientID = auth.patientId else { return }
         do {
             let result = try await service.getAllAppointments(patientID: patientID)
             

@@ -14,14 +14,16 @@ struct SignInView: View {
     @State private var password = ""
     @State private var showLoading = false
     
+    var authManager = AuthenticatorManager.shared
+    
     func login(loginRequest: LoginRequest) async {
         do {
             showLoading = true
             let result = try await service.loginPatient(loginRequest: loginRequest)
             switch result {
             case .success(let result):
-                KeychainHelper.save(value: result.token, key: UserDefaultKeys.token.rawValue)
-                KeychainHelper.save(value: result.id, key: UserDefaultKeys.patientID.rawValue)
+                authManager.saveToken(token: result.token)
+                authManager.savePatientID(id: result.id)
                 print("Login Sucesso \(result)")
             case .failure(let error):
                 print("API error \(error.localizedDescription)")

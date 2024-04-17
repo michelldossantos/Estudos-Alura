@@ -7,13 +7,15 @@
 
 import Foundation
 
-class AuthenticatorManager {
-    var token: String?
-    var patientId: String?
+class AuthenticatorManager: ObservableObject {
+    @Published var token: String?
+    @Published var patientId: String?
     
-    init(token: String? = nil, patientId: String? = nil) {
-        self.token = token
-        self.patientId = patientId
+    static let shared = AuthenticatorManager()
+    
+    private init() {
+        self.token = KeychainHelper.getValue(key: UserDefaultKeys.token.rawValue)
+        self.patientId = KeychainHelper.getValue(key: UserDefaultKeys.patientID.rawValue)
     }
     
     func saveToken(token: String) {

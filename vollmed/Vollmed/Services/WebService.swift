@@ -16,6 +16,8 @@ enum APIError: Error {
 }
 
 struct WebService {
+    let auth = AuthenticatorManager.shared
+    
     func getAllAppointments(patientID: String) async throws -> Result<[AppointmentResult], APIError> {
         let endpoint = SpecialistEndpoint.getAllAppointments(patientID: patientID)
         
@@ -23,7 +25,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = KeychainHelper.getValue(key: "token") else {
+        guard let token = auth.token else {
             return .failure(.tokenFailed)
         }
         
@@ -47,7 +49,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = KeychainHelper.getValue(key: "token") else {
+        guard let token = auth.token else {
             return .failure(.tokenFailed)
         }
         
@@ -114,7 +116,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = KeychainHelper.getValue(key: "token") else {
+        guard let token = auth.token else {
             return .failure(.tokenFailed)
         }
         
@@ -140,7 +142,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = KeychainHelper.getValue(key: "token") else {
+        guard let token = auth.token else {
             return .failure(.tokenFailed)
         }
         
@@ -165,7 +167,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = KeychainHelper.getValue(key: "token") else {
+        guard let token = auth.token else {
             return .failure(.tokenFailed)
         }
         
@@ -238,7 +240,9 @@ struct WebService {
             return false
         }
         
-        guard let token = KeychainHelper.getValue(key: UserDefaultKeys.token.rawValue) else { return false }
+        guard let token = auth.token else {
+            return false
+        }
         
         var request = URLRequest(url: url)
         request.httpMethod = "Post"
