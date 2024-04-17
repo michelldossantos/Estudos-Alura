@@ -284,6 +284,21 @@
                   endingLineNumber = "59"
                   offsetFromSymbolStart = "128">
                </Location>
+               <Location
+                  uuid = "D6EFE3BE-F07C-4ED9-AB6D-FFC4E54726C8 - 4ef0b56b17d46381"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Vollmed.ScheduleAppointmentView.scheduleAppointment() async -&gt; ()"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Views/Scenes/ScheduleAppointmentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "404">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -443,7 +458,38 @@
                   endingLineNumber = "56"
                   offsetFromSymbolStart = "512">
                </Location>
+               <Location
+                  uuid = "BD4433EB-788A-4708-A8BA-60396B53C89F - 4ef0b56b17d4601c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Vollmed.ScheduleAppointmentView.scheduleAppointment() async -&gt; ()"
+                  moduleName = "Vollmed"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Views/Scenes/ScheduleAppointmentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "72">
+               </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1B481BA0-46DB-457A-9B54-0701A534E585"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Vollmed/Views/Scenes/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "logout()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
