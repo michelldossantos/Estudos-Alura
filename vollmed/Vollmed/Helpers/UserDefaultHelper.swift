@@ -8,8 +8,8 @@
 import Foundation
 
 enum UserDefaultKeys: String {
-    case token
-    case patientID
+    case token = "app-vollmed-token"
+    case patientID = "app-vollmed-patientId"
 }
 
 struct UserDefaultHelper {

@@ -12,7 +12,7 @@ struct MyAppointmentsView: View {
     @State private var appointments: [AppointmentResult] = []
     
     func getAllAppointments() async {
-        guard let patientID = UserDefaultHelper.getValue(key: UserDefaultKeys.patientID.rawValue) else { return }
+        guard let patientID = KeychainHelper.getValue(key: UserDefaultKeys.patientID.rawValue) else { return }
         do {
             let result = try await service.getAllAppointments(patientID: patientID)
             

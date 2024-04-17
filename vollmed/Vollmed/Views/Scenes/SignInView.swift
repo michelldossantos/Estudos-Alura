@@ -20,8 +20,8 @@ struct SignInView: View {
             let result = try await service.loginPatient(loginRequest: loginRequest)
             switch result {
             case .success(let result):
-                UserDefaultHelper.save(value: result.token, key: UserDefaultKeys.token.rawValue)
-                UserDefaultHelper.save(value: result.id, key: UserDefaultKeys.patientID.rawValue)
+                KeychainHelper.save(value: result.token, key: UserDefaultKeys.token.rawValue)
+                KeychainHelper.save(value: result.id, key: UserDefaultKeys.patientID.rawValue)
                 print("Login Sucesso \(result)")
             case .failure(let error):
                 print("API error \(error.localizedDescription)")

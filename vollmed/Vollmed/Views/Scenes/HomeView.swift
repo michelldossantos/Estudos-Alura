@@ -21,8 +21,8 @@ struct HomeView: View {
         do {
             let logouutSuccesful = try await service.logoutPatient()
             if logouutSuccesful {
-                UserDefaultHelper.remove(key: UserDefaultKeys.token.rawValue)
-                UserDefaultHelper.remove(key: UserDefaultKeys.patientID.rawValue)
+                KeychainHelper.remove(key: UserDefaultKeys.token.rawValue)
+                KeychainHelper.remove(key: UserDefaultKeys.patientID.rawValue)
             }
         } catch {
             print("error")

@@ -23,7 +23,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = UserDefaultHelper.getValue(key: "token") else {
+        guard let token = KeychainHelper.getValue(key: "token") else {
             return .failure(.tokenFailed)
         }
         
@@ -47,7 +47,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = UserDefaultHelper.getValue(key: "token") else {
+        guard let token = KeychainHelper.getValue(key: "token") else {
             return .failure(.tokenFailed)
         }
         
@@ -114,7 +114,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = UserDefaultHelper.getValue(key: "token") else {
+        guard let token = KeychainHelper.getValue(key: "token") else {
             return .failure(.tokenFailed)
         }
         
@@ -140,7 +140,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = UserDefaultHelper.getValue(key: "token") else {
+        guard let token = KeychainHelper.getValue(key: "token") else {
             return .failure(.tokenFailed)
         }
         
@@ -165,7 +165,7 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        guard let token = UserDefaultHelper.getValue(key: "token") else {
+        guard let token = KeychainHelper.getValue(key: "token") else {
             return .failure(.tokenFailed)
         }
         
@@ -238,7 +238,7 @@ struct WebService {
             return false
         }
         
-        guard let token = UserDefaultHelper.getValue(key: UserDefaultKeys.token.rawValue) else { return false }
+        guard let token = KeychainHelper.getValue(key: UserDefaultKeys.token.rawValue) else { return false }
         
         var request = URLRequest(url: url)
         request.httpMethod = "Post"
