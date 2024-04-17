@@ -12,9 +12,8 @@ enum APIError: Error {
     case requestFailed
     case decodingFailed
     case imageNil
+    case tokenFailed
 }
-
-let patientID = "b26a74c0-44ce-4084-8585-a16aff125d18"
 
 struct WebService {
     func getAllAppointments(patientID: String) async throws -> Result<[AppointmentResult], APIError> {
@@ -24,7 +23,16 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        guard let token = UserDefaultHelper.getValue(key: "token") else {
+            return .failure(.tokenFailed)
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
         let appointments = try JSONDecoder().decode([AppointmentResult].self, from: data)
         
         return .success(appointments)
@@ -39,6 +47,10 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
+        guard let token = UserDefaultHelper.getValue(key: "token") else {
+            return .failure(.tokenFailed)
+        }
+        
         let appointment = ScheduleAppointmentRequest(specialistID: specialistID,
                                                      patientID: patientID,
                                                      date: date)
@@ -48,6 +60,7 @@ struct WebService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.httpBody = jsonData
         
         let (data, _) = try await URLSession.shared.data(for: request)
@@ -101,6 +114,10 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
+        guard let token = UserDefaultHelper.getValue(key: "token") else {
+            return .failure(.tokenFailed)
+        }
+        
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
             
@@ -123,12 +140,17 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
+        guard let token = UserDefaultHelper.getValue(key: "token") else {
+            return .failure(.tokenFailed)
+        }
+        
         let requestData: [String: String] = ["data": date]
         let jsonData = try JSONSerialization.data(withJSONObject: requestData)
 
         var request = URLRequest(url: url)
         request.httpMethod = "Patch"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.httpBody = jsonData
 
         let (data, _) = try await URLSession.shared.data(for: request)
@@ -143,6 +165,10 @@ struct WebService {
             return .failure(.invalidURL)
         }
         
+        guard let token = UserDefaultHelper.getValue(key: "token") else {
+            return .failure(.tokenFailed)
+        }
+        
         let requestData: [String: String] =  ["motivo_cancelamento": reasonToCancel]
         let jsonData = try JSONSerialization.data(withJSONObject: requestData)
         
@@ -150,6 +176,7 @@ struct WebService {
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.httpBody = jsonData
 
         let (data, response) = try await URLSession.shared.data(for: request)

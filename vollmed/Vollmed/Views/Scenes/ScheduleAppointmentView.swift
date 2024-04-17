@@ -53,6 +53,8 @@ struct ScheduleAppointmentView: View {
     }
     
     func scheduleAppointment() async {
+        guard let patientID = UserDefaultHelper.getValue(key: UserDefaultKeys.patientID.rawValue) else { return }
+        
         do {
             let result = try await service.scheduleAppointment(
                 specialistID: specialistId,

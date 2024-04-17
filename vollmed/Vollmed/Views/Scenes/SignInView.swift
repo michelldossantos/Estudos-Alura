@@ -12,9 +12,11 @@ struct SignInView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @State private var showLoading = false
     
-    func login(loginRequest: LoginRequest)  async {
+    func login(loginRequest: LoginRequest) async {
         do {
+            showLoading = true
             let result = try await service.loginPatient(loginRequest: loginRequest)
             switch result {
             case .success(let result):
@@ -27,6 +29,7 @@ struct SignInView: View {
         } catch {
             print("Ocorreu um erro ao fazer login")
         }
+        showLoading = false
     }
     
     var body: some View {
@@ -60,12 +63,17 @@ struct SignInView: View {
             
             Button {
                 Task {
-                    let loginResponse: LoginRequest = .init(email: email, 
-                                                            password: password)
+                    let loginResponse: LoginRequest = .init(email: email, password: password)
                     await login(loginRequest: loginResponse)
                 }
             } label: {
-                ButtonView(text: "Entrar")
+                if showLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .foregroundColor(.white)
+                } else {
+                    ButtonView(text: "Entrar")
+                }
             }
             
             NavigationLink {
