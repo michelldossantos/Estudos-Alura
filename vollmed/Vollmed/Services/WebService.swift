@@ -250,10 +250,12 @@ struct WebService {
 
         let (_, response) = try await URLSession.shared.data(for: request)
         
-        if let httResponse = response as? HTTPURLResponse, httResponse.statusCode == 200 {
-            return true
+        if let httResponse = response as?  HTTPURLResponse {
+            print(httResponse.statusCode)
+            if httResponse.statusCode == 200 {
+                return true
+            }
         }
-        
         return false
     }
 }

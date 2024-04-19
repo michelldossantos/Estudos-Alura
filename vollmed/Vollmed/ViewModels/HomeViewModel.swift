@@ -10,6 +10,7 @@ import Foundation
 struct HomeViewModel {
     //MARK: - Attibutes
     let service = WebService()
+    let auth = AuthenticatorManager.shared
     
     
     //MARK: - Methods
@@ -20,12 +21,24 @@ struct HomeViewModel {
             switch result {
             case .success(let model):
                 return model
-            case .failure(let error):
+            case .failure:
                 return []
             }
         } catch {
             print("Ocorreu um problema ao obter os especielistas")
            throw error
+        }
+    }
+    
+    func logout() async {
+        do {
+            let logouutSuccesful = try await service.logoutPatient()
+            if logouutSuccesful {
+                auth.removeToken()
+                auth.removePatientID()
+            }
+        } catch {
+            print("error \(error.localizedDescription)")
         }
     }
 }

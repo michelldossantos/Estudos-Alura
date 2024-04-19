@@ -1,35 +1,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    let service = WebService()
-    let auth = AuthenticatorManager.shared
+    var viewModel = HomeViewModel()
     
     @State private var specialists: [Specialist] = []
-    
-    func getSpecialist() async {
-        let result = try? await service.getAllSpecialists()
-        
-        switch result {
-        case .success(let model):
-            specialists = model
-        case .failure(let error):
-            print("Houve um erro: \(error)")
-        case .none:
-            print("result nil")
-        }
-    }
-    
-    func logout() async {
-        do {
-            let logouutSuccesful = try await service.logoutPatient()
-            if logouutSuccesful {
-                auth.removeToken()
-                auth.removePatientID()
-            }
-        } catch {
-            print("error")
-        }
-    }
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -59,14 +33,20 @@ struct HomeView: View {
         .padding(.top)
         .onAppear {
             Task {
-               await getSpecialist()
+                do {
+                    let response = try await viewModel.getSpecialist()
+                    self.specialists = response
+                } catch {
+                    print(error.localizedDescription)
+                }
+                
             }
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     Task {
-                        await logout()
+                        await viewModel.logout()
                     }
                 } label: {
                     HStack(spacing: 2) {
