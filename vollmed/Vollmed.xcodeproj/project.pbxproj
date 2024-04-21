@@ -25,6 +25,10 @@
 		0AE518572BC774BB0085023C /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE518562BC774BB0085023C /* FieldView.swift */; };
 		0AE518592BC77D6B0085023C /* TextDefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE518582BC77D6B0085023C /* TextDefaultView.swift */; };
 		0AEBB6B02BC94EC400149E8D /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEBB6AF2BC94EC400149E8D /* LoginModels.swift */; };
+		0AF3A77D2BD288FB0069FFB9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A77C2BD288FB0069FFB9 /* Endpoint.swift */; };
+		0AF3A77F2BD28C260069FFB9 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A77E2BD28C260069FFB9 /* RequestMethod.swift */; };
+		0AF3A7812BD28CC50069FFB9 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A7802BD28CC50069FFB9 /* APIError.swift */; };
+		0AF3A7832BD28DC90069FFB9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3A7822BD28DC90069FFB9 /* HTTPClient.swift */; };
 		484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BEEFC2AB0F5750033C07A /* Specialist.swift */; };
 		484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BEEFE2AB0F59D0033C07A /* WebService.swift */; };
 		484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484BEF002AB0F6090033C07A /* ButtonView.swift */; };
@@ -55,6 +59,10 @@
 		0AE518562BC774BB0085023C /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		0AE518582BC77D6B0085023C /* TextDefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDefaultView.swift; sourceTree = "<group>"; };
 		0AEBB6AF2BC94EC400149E8D /* LoginModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModels.swift; sourceTree = "<group>"; };
+		0AF3A77C2BD288FB0069FFB9 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0AF3A77E2BD28C260069FFB9 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		0AF3A7802BD28CC50069FFB9 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0AF3A7822BD28DC90069FFB9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		484BEEFC2AB0F5750033C07A /* Specialist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Specialist.swift; sourceTree = "<group>"; };
 		484BEEFE2AB0F59D0033C07A /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		484BEF002AB0F6090033C07A /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -133,6 +141,41 @@
 			path = LoginModels;
 			sourceTree = "<group>";
 		};
+		0AF3A7782BD2888E0069FFB9 /* NetWorking */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3A77B2BD288A60069FFB9 /* Services */,
+				0AF3A77A2BD2889E0069FFB9 /* Endpoints */,
+				0AF3A7792BD288990069FFB9 /* Base */,
+			);
+			path = NetWorking;
+			sourceTree = "<group>";
+		};
+		0AF3A7792BD288990069FFB9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3A77C2BD288FB0069FFB9 /* Endpoint.swift */,
+				0AF3A77E2BD28C260069FFB9 /* RequestMethod.swift */,
+				0AF3A7802BD28CC50069FFB9 /* APIError.swift */,
+				0AF3A7822BD28DC90069FFB9 /* HTTPClient.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0AF3A77A2BD2889E0069FFB9 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		0AF3A77B2BD288A60069FFB9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		484BEEF82AB0F55F0033C07A /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +236,7 @@
 		48539DEB2AB0F47C005BD7C9 /* Vollmed */ = {
 			isa = PBXGroup;
 			children = (
+				0AF3A7782BD2888E0069FFB9 /* NetWorking */,
 				0AAC25B32BD09F7B009B8F66 /* ViewModels */,
 				0AAC22A32BCFE098009B8F66 /* Manager */,
 				0A013CDE2BCA19CA00F2754B /* Helpers */,
@@ -291,6 +335,7 @@
 				0A0833D42BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift in Sources */,
 				0AAC25B52BD09F8B009B8F66 /* HomeViewModel.swift in Sources */,
 				0AE518592BC77D6B0085023C /* TextDefaultView.swift in Sources */,
+				0AF3A7832BD28DC90069FFB9 /* HTTPClient.swift in Sources */,
 				0A2AD46D2BC4D1DE00F90B9B /* CancelAppointmentView.swift in Sources */,
 				48539DEF2AB0F47C005BD7C9 /* ContentView.swift in Sources */,
 				0A0833D02BBCF49500E5EF18 /* String+.swift in Sources */,
@@ -299,9 +344,12 @@
 				0AE518572BC774BB0085023C /* FieldView.swift in Sources */,
 				0AEBB6B02BC94EC400149E8D /* LoginModels.swift in Sources */,
 				0A1866652BC8ADCB001B0BD9 /* PatientModel.swift in Sources */,
+				0AF3A7812BD28CC50069FFB9 /* APIError.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
+				0AF3A77F2BD28C260069FFB9 /* RequestMethod.swift in Sources */,
+				0AF3A77D2BD288FB0069FFB9 /* Endpoint.swift in Sources */,
 				0AB0449F2BC0CCAB0004956A /* MyAppointmentsView.swift in Sources */,
 				484BEF032AB0F7080033C07A /* SpecialistCardView.swift in Sources */,
 				0A51431B2BC6A68600760413 /* SignUpView.swift in Sources */,

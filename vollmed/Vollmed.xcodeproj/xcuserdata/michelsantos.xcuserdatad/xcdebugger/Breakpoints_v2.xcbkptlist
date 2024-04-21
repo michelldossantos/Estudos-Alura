@@ -125,8 +125,8 @@
             filePath = "Vollmed/Services/WebService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "scheduleAppointment(specialistID:patientID:date:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -141,70 +141,70 @@
             filePath = "Vollmed/Services/WebService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "scheduleAppointment(specialistID:patientID:date:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - c8ca5e7c8495d241"
+                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - 70de024d93aef721"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Vollmed.WebService.scheduleAppointment(specialistID: Swift.String, patientID: Swift.String, date: Swift.String) async throws -&gt; Swift.Result&lt;Vollmed.ScheduleAppointmentResponse, Vollmed.APIError&gt;"
+                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.getAllAppointments(patientID: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.AppointmentResult&gt;, Vollmed.APIError&gt;"
                   moduleName = "Vollmed"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "468">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "832">
                </Location>
                <Location
-                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - 110a3df0e33b8260"
+                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - 391a69e151a8d806"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.scheduleAppointment(specialistID: Swift.String, patientID: Swift.String, date: Swift.String) async throws -&gt; Swift.Result&lt;Vollmed.ScheduleAppointmentResponse, Vollmed.APIError&gt;"
+                  symbolName = "(2) await resume partial function for Vollmed.WebService.getAllAppointments(patientID: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.AppointmentResult&gt;, Vollmed.APIError&gt;"
                   moduleName = "Vollmed"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "148">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "40">
                </Location>
                <Location
-                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - 110a3df0e33b8260"
+                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - e448f6a139d53327"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Vollmed.WebService.scheduleAppointment(specialistID: Swift.String, patientID: Swift.String, date: Swift.String) async throws -&gt; Swift.Result&lt;Vollmed.ScheduleAppointmentResponse, Vollmed.APIError&gt;"
+                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.getAllAppointments(patientID: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.AppointmentResult&gt;, Vollmed.APIError&gt;"
                   moduleName = "Vollmed"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "1820">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "76">
                </Location>
                <Location
-                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - 61d056e57342ce62"
+                  uuid = "297806A2-D9B9-4E4D-AFFB-1462A1C16B7B - 53b1dcf2f4e0d126"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Vollmed.WebService.scheduleAppointment(specialistID: Swift.String, patientID: Swift.String, date: Swift.String) async throws -&gt; Swift.Result&lt;Vollmed.ScheduleAppointmentResponse, Vollmed.APIError&gt;"
+                  symbolName = "(4) suspend resume partial function for Vollmed.WebService.getAllAppointments(patientID: Swift.String) async throws -&gt; Swift.Result&lt;Swift.Array&lt;Vollmed.AppointmentResult&gt;, Vollmed.APIError&gt;"
                   moduleName = "Vollmed"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/michelsantos/Desktop/testIosSampleSDKBug/Estudos-Alura/vollmed/Vollmed/Services/WebService.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "928">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>

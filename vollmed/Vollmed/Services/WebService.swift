@@ -7,14 +7,6 @@
 
 import UIKit
 
-enum APIError: Error {
-    case invalidURL
-    case requestFailed
-    case decodingFailed
-    case imageNil
-    case tokenFailed
-}
-
 struct WebService {
     let auth = AuthenticatorManager.shared
     
