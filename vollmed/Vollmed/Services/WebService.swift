@@ -198,31 +198,6 @@ struct WebService {
         
         return .success(loginReposnte)
     }
-    
-    func logoutPatient() async throws -> Bool {
-        let endpoint = SpecialistEndpoint.logoutRequest()
-        guard let url = URL(string: endpoint) else {
-            return false
-        }
-        
-        guard let token = auth.token else {
-            return false
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "Post"
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-
-        let (_, response) = try await URLSession.shared.data(for: request)
-        
-        if let httResponse = response as?  HTTPURLResponse {
-            print(httResponse.statusCode)
-            if httResponse.statusCode == 200 {
-                return true
-            }
-        }
-        return false
-    }
 }
 
 struct SpecialistEndpoint {
@@ -250,9 +225,5 @@ struct SpecialistEndpoint {
     
     static func loginRequest() -> String {
         return ("\(baseURL)/auth/login")
-    }
-    
-    static func logoutRequest() -> String {
-        return ("\(baseURL)/auth/logout")
     }
 }
