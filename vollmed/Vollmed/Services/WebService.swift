@@ -100,34 +100,7 @@ struct WebService {
             return .failure(.decodingFailed)
         }
     }
-    
-    func getAllSpecialists() async throws -> Result<[Specialist], APIError> {
-        let endpoint = SpecialistEndpoint.getAllSpecialists()
         
-        guard let url = URL(string: endpoint) else {
-            return .failure(.invalidURL)
-        }
-        
-        guard let token = auth.token else {
-            return .failure(.tokenFailed)
-        }
-        
-        do {
-            let (data, response) = try await URLSession.shared.data(from: url)
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                return .failure(.requestFailed)
-            }
-            
-            let specialists = try JSONDecoder().decode([Specialist].self, from: data)
-            
-            return .success(specialists)
-        } catch {
-            return .failure(.decodingFailed)
-        }
-    }
-    
     func rescheduleAppointment(appointmentID: String, date: String) async throws -> Result<ScheduleAppointmentResponse, APIError> {
         let endpoint = SpecialistEndpoint.rescheduleAppointment(appointmentID: appointmentID)
         guard let url = URL(string: endpoint) else {
@@ -254,11 +227,7 @@ struct WebService {
 
 struct SpecialistEndpoint {
     static let baseURL = "http://localhost:3000"
-    
-    static func getAllSpecialists() -> String {
-        return ("\(baseURL)/especialista")
-    }
-    
+        
     static func postAppointment() -> String {
         return ("\(baseURL)/consulta")
     }
