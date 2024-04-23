@@ -16,6 +16,7 @@ enum APIError: Error {
     case noResponse
     case anauthorized
     case custom(_ error: [String: Any])
+    case unknow
     
     var customMessage: String {
         switch self {

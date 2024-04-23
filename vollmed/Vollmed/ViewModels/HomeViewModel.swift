@@ -16,6 +16,7 @@ struct HomeViewModel {
     //MARK: - Methods
     func getSpecialist() async throws -> [Specialist] {
         do {
+            let test = HomeEndpoint.getAllSpecialists
             let result = try await service.getAllSpecialists()
             
             switch result {
