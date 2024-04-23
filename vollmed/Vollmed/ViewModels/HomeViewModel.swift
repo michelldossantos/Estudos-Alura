@@ -9,37 +9,35 @@ import Foundation
 
 struct HomeViewModel {
     //MARK: - Attibutes
-    let service = WebService()
+    let service: HomeServiceable
     let auth = AuthenticatorManager.shared
     
-    
+    //MARK: Init
+    init(service: HomeServiceable) {
+        self.service = service
+    }
+
     //MARK: - Methods
-    func getSpecialist() async throws -> [Specialist] {
-        do {
-            let test = HomeEndpoint.getAllSpecialists
-            let result = try await service.getAllSpecialists()
-            
-            switch result {
-            case .success(let model):
-                return model
-            case .failure:
-                return []
-            }
-        } catch {
-            print("Ocorreu um problema ao obter os especielistas")
-           throw error
+    func getSpecialist() async throws -> [Specialist]? {
+        let result = try await service.getSpecialist()
+        
+        switch result {
+        case .success(let model):
+            return model!
+        case .failure(let error):
+            throw error
         }
     }
     
     func logout() async {
-        do {
-            let logouutSuccesful = try await service.logoutPatient()
-            if logouutSuccesful {
-                auth.removeToken()
-                auth.removePatientID()
-            }
-        } catch {
-            print("error \(error.localizedDescription)")
-        }
+//        do {
+//            let logouutSuccesful = try await service.logoutPatient()
+//            if logouutSuccesful {
+//                auth.removeToken()
+//                auth.removePatientID()
+//            }
+//        } catch {
+//            print("error \(error.localizedDescription)")
+//        }
     }
 }

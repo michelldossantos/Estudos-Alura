@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    var viewModel = HomeViewModel()
+    var viewModel = HomeViewModel(service: HomeNetworkingService())
     
     @State private var specialists: [Specialist] = []
     
@@ -34,7 +34,7 @@ struct HomeView: View {
         .onAppear {
             Task {
                 do {
-                    let response = try await viewModel.getSpecialist()
+                    guard let response = try await viewModel.getSpecialist() else { return }
                     self.specialists = response
                 } catch {
                     print(error.localizedDescription)

@@ -34,6 +34,6 @@ extension Endpoint {
     }
     
     var body: [String : String]? {
-        return ["Test": "Bom"]
+        return nil
     }
 }

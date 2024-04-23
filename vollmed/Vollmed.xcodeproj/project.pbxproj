@@ -14,6 +14,7 @@
 		0A0833D42BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833D32BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift */; };
 		0A1866652BC8ADCB001B0BD9 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1866642BC8ADCB001B0BD9 /* PatientModel.swift */; };
 		0A20FC712BD7413700AD519C /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20FC702BD7413700AD519C /* HomeEndpoint.swift */; };
+		0A20FF802BD7453600AD519C /* HomeNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20FF7F2BD7453600AD519C /* HomeNetworkingService.swift */; };
 		0A2AD46D2BC4D1DE00F90B9B /* CancelAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2AD46C2BC4D1DE00F90B9B /* CancelAppointmentView.swift */; };
 		0A5143192BC6A2D100760413 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5143182BC6A2D100760413 /* SignInView.swift */; };
 		0A51431B2BC6A68600760413 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51431A2BC6A68600760413 /* SignUpView.swift */; };
@@ -49,6 +50,7 @@
 		0A0833D32BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentResponse.swift; sourceTree = "<group>"; };
 		0A1866642BC8ADCB001B0BD9 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
 		0A20FC702BD7413700AD519C /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		0A20FF7F2BD7453600AD519C /* HomeNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkingService.swift; sourceTree = "<group>"; };
 		0A2AD46C2BC4D1DE00F90B9B /* CancelAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAppointmentView.swift; sourceTree = "<group>"; };
 		0A5143182BC6A2D100760413 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		0A51431A2BC6A68600760413 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				484BEEFE2AB0F59D0033C07A /* WebService.swift */,
+				0A20FF7F2BD7453600AD519C /* HomeNetworkingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				0A51431B2BC6A68600760413 /* SignUpView.swift in Sources */,
 				484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */,
 				0AAC22A52BCFE0B2009B8F66 /* AuthenticatorManager.swift in Sources */,
+				0A20FF802BD7453600AD519C /* HomeNetworkingService.swift in Sources */,
 				48539DED2AB0F47C005BD7C9 /* VollmedApp.swift in Sources */,
 				0A5143192BC6A2D100760413 /* SignInView.swift in Sources */,
 				0AAC22A22BCF6C79009B8F66 /* KeychainHelper.swift in Sources */,
