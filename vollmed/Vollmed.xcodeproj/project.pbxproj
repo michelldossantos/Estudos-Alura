@@ -13,6 +13,9 @@
 		0A0833D22BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833D12BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift */; };
 		0A0833D42BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0833D32BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift */; };
 		0A1866652BC8ADCB001B0BD9 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1866642BC8ADCB001B0BD9 /* PatientModel.swift */; };
+		0A2002932BD88E3000AD519C /* ScheduleAppointmentNetworkinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2002922BD88E3000AD519C /* ScheduleAppointmentNetworkinService.swift */; };
+		0A2002952BD88EF900AD519C /* ScheduleAppointmentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2002942BD88EF900AD519C /* ScheduleAppointmentEndpoint.swift */; };
+		0A2002972BD896B300AD519C /* Dictionary+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2002962BD896B300AD519C /* Dictionary+.swift */; };
 		0A20FC712BD7413700AD519C /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20FC702BD7413700AD519C /* HomeEndpoint.swift */; };
 		0A20FF802BD7453600AD519C /* HomeNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20FF7F2BD7453600AD519C /* HomeNetworkingService.swift */; };
 		0A20FF822BD7CED500AD519C /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A20FF812BD7CED500AD519C /* AuthenticationEndpoint.swift */; };
@@ -51,6 +54,9 @@
 		0A0833D12BBD6BD100E5EF18 /* ScheduleAppointmentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentRequest.swift; sourceTree = "<group>"; };
 		0A0833D32BBD71A600E5EF18 /* ScheduleAppointmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentResponse.swift; sourceTree = "<group>"; };
 		0A1866642BC8ADCB001B0BD9 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
+		0A2002922BD88E3000AD519C /* ScheduleAppointmentNetworkinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentNetworkinService.swift; sourceTree = "<group>"; };
+		0A2002942BD88EF900AD519C /* ScheduleAppointmentEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentEndpoint.swift; sourceTree = "<group>"; };
+		0A2002962BD896B300AD519C /* Dictionary+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+.swift"; sourceTree = "<group>"; };
 		0A20FC702BD7413700AD519C /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
 		0A20FF7F2BD7453600AD519C /* HomeNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkingService.swift; sourceTree = "<group>"; };
 		0A20FF812BD7CED500AD519C /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			children = (
 				0A0833CD2BBCF32300E5EF18 /* Date+.swift */,
 				0A0833CF2BBCF49500E5EF18 /* String+.swift */,
+				0A2002962BD896B300AD519C /* Dictionary+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 			children = (
 				0A20FF812BD7CED500AD519C /* AuthenticationEndpoint.swift */,
 				0A20FC702BD7413700AD519C /* HomeEndpoint.swift */,
+				0A2002942BD88EF900AD519C /* ScheduleAppointmentEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 				484BEEFE2AB0F59D0033C07A /* WebService.swift */,
 				0A20FF7F2BD7453600AD519C /* HomeNetworkingService.swift */,
 				0A20FF832BD7D19300AD519C /* AuthenticationService.swift */,
+				0A2002922BD88E3000AD519C /* ScheduleAppointmentNetworkinService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -364,11 +373,14 @@
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
 				0AF3A77F2BD28C260069FFB9 /* RequestMethod.swift in Sources */,
 				0AF3A77D2BD288FB0069FFB9 /* Endpoint.swift in Sources */,
+				0A2002952BD88EF900AD519C /* ScheduleAppointmentEndpoint.swift in Sources */,
+				0A2002932BD88E3000AD519C /* ScheduleAppointmentNetworkinService.swift in Sources */,
 				0AB0449F2BC0CCAB0004956A /* MyAppointmentsView.swift in Sources */,
 				484BEF032AB0F7080033C07A /* SpecialistCardView.swift in Sources */,
 				0A51431B2BC6A68600760413 /* SignUpView.swift in Sources */,
 				0A20FF822BD7CED500AD519C /* AuthenticationEndpoint.swift in Sources */,
 				484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */,
+				0A2002972BD896B300AD519C /* Dictionary+.swift in Sources */,
 				0AAC22A52BCFE0B2009B8F66 /* AuthenticatorManager.swift in Sources */,
 				0A20FF802BD7453600AD519C /* HomeNetworkingService.swift in Sources */,
 				48539DED2AB0F47C005BD7C9 /* VollmedApp.swift in Sources */,

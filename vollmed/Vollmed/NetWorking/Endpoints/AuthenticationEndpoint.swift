@@ -33,11 +33,4 @@ extension AuthenticationEndpoint: Endpoint {
             "Content-Type": "application/json"
         ]
     }
-    
-    var body: [String : String]? {
-        switch self {
-        case .logout:
-            return nil
-        }
-    }
 }

@@ -28,7 +28,9 @@ extension HTTPClient {
         request.allHTTPHeaderFields = endpoint.header
         
         if let body = endpoint.body {
-            request.httpBody =  try? JSONSerialization.data(withJSONObject: body)
+            if let encodedBody = try? JSONEncoder().encode(body) {
+            request.httpBody = encodedBody
+            }
         }
         
         do {
