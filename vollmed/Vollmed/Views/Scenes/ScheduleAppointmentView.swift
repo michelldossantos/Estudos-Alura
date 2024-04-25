@@ -10,7 +10,6 @@ import SwiftUI
 struct ScheduleAppointmentView: View {
     //TODO: Remove to ViewModel
     let service = WebService()
-    let auth = AuthenticatorManager.shared
     
     private var viewModel = ScheduleAppointmentViewModel(service: ScheduleAppointmentNetworkinService())
     
@@ -58,12 +57,9 @@ struct ScheduleAppointmentView: View {
     }
     
     func scheduleAppointment() async {
-        guard let patientID = auth.patientId else { return }
-        
         do {
             let result = try await viewModel.scheduleAppointment(
                 specialistID: specialistId,
-                patientID: patientID,
                 date: selectedDate.convertToString()
             )
             

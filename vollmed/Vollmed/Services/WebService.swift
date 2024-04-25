@@ -1,10 +1,3 @@
-//
-//  WebService.swift
-//  Vollmed
-//
-//  Created by Giovanna Moeller on 12/09/23.
-//
-
 import UIKit
 
 struct WebService {
@@ -30,37 +23,6 @@ struct WebService {
         let appointments = try JSONDecoder().decode([AppointmentResult].self, from: data)
         
         return .success(appointments)
-    }
-    
-    func scheduleAppointment(specialistID: String,
-                             patientID: String,
-                             date: String) async throws -> Result<ScheduleAppointmentResponse, APIError> {
-        let endpoint = SpecialistEndpoint.postAppointment()
-        
-        guard let url = URL(string: endpoint) else {
-            return .failure(.invalidURL)
-        }
-        
-        guard let token = auth.token else {
-            return .failure(.tokenFailed)
-        }
-        
-        let appointment = ScheduleAppointmentRequest(specialistID: specialistID,
-                                                     patientID: patientID,
-                                                     date: date)
-        
-        let jsonData = try JSONEncoder().encode(appointment)
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.httpBody = jsonData
-        
-        let (data, _) = try await URLSession.shared.data(for: request)
-        let appointmentReponse = try JSONDecoder().decode(ScheduleAppointmentResponse.self, from: data)
-        
-        return .success(appointmentReponse)
     }
     
     func getImages(from urlImage: String) async throws -> Result<UIImage?, APIError> {
@@ -202,10 +164,6 @@ struct WebService {
 
 struct SpecialistEndpoint {
     static let baseURL = "http://localhost:3000"
-        
-    static func postAppointment() -> String {
-        return ("\(baseURL)/consulta")
-    }
     
     static func getAllAppointments(patientID: String) -> String {
         return ("\(baseURL)/paciente/\(patientID)/consultas")

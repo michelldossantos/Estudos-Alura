@@ -1,10 +1,3 @@
-//
-//  ButtonView.swift
-//  Vollmed
-//
-//  Created by Giovanna Moeller on 12/09/23.
-//
-
 import SwiftUI
 
 enum ButtonType {

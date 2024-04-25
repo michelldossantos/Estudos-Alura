@@ -16,9 +16,3 @@ struct LoginRequest: Encodable {
         case password = "senha"
     }
 }
-
-struct LoginResponse: Decodable, Identifiable {
-    let id: String
-    let auth: Bool
-    let token: String
-}

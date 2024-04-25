@@ -19,7 +19,6 @@ class ScheduleAppointmentViewModel: ObservableObject {
     
     //MARK: Init
     func scheduleAppointment(specialistID: String,
-                             patientID: String,
                              date: String) async throws -> ScheduleAppointmentResponse? {
         let patientId = auth.patientId ?? ""
         let result = try await service.scheduleAppointment(scheduleAppointment: .init(specialistID: specialistID, 
