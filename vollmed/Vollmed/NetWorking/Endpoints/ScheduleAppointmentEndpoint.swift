@@ -27,12 +27,16 @@ extension ScheduleAppointmentEndpoint: Endpoint {
             "Content-Type": "application/json"
         ]
     }
-    
     var body: Data? {
         switch self {
         case .scheduleAppointment(let request):
             let data = try? JSONEncoder().encode(request)
+
             return data
         }
+    }
+    
+    var method: RequestMethod {
+        return .post
     }
 }

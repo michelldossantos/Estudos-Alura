@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct ScheduleAppointmentView: View {
+    //TODO: Remove to ViewModel
     let service = WebService()
     let auth = AuthenticatorManager.shared
+    
+    private var viewModel = ScheduleAppointmentViewModel(service: ScheduleAppointmentNetworkinService())
+    
     var specialistId: String
     var isRescheduleView: Bool
     var appointmentID: String?
-    
-    @State private var selectedDate = Date()
-    @State private var isShowAlert = false
-    @State private var isAppointmentScheduled = false
     
     init(specialistId: String, 
          isRescheduleView: Bool = false,
@@ -25,6 +25,10 @@ struct ScheduleAppointmentView: View {
         self.isRescheduleView = isRescheduleView
         self.appointmentID = appointmentID
     }
+    
+    @State private var selectedDate = Date()
+    @State private var isShowAlert = false
+    @State private var isAppointmentScheduled = false
     
     func rescheduleAppointment() async {
         guard let appointmentID else {
@@ -57,17 +61,16 @@ struct ScheduleAppointmentView: View {
         guard let patientID = auth.patientId else { return }
         
         do {
-            let result = try await service.scheduleAppointment(
+            let result = try await viewModel.scheduleAppointment(
                 specialistID: specialistId,
                 patientID: patientID,
                 date: selectedDate.convertToString()
             )
             
-            switch result {
-            case .success(let result):
+            if result != nil {
                 print("#### + \(result)")
                 isAppointmentScheduled = true
-            case .failure:
+            } else {
                 print("@@@@Algo deu errado")
                 isAppointmentScheduled = false
             }
@@ -93,6 +96,7 @@ struct ScheduleAppointmentView: View {
                 print("Agendar consulta \(selectedDate.convertToString().converterDateStringToReadableDate())")
                 Task {
                     if isRescheduleView {
+                        //TODO: Remove to ViewModel
                         await rescheduleAppointment()
                     } else {
                         await scheduleAppointment()

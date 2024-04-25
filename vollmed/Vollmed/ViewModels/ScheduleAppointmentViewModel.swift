@@ -7,22 +7,24 @@
 
 import Foundation
 
-struct ScheduleAppointmentViewModel {
+class ScheduleAppointmentViewModel: ObservableObject {
     //MARK: - Attibutes
+    let auth = AuthenticatorManager.shared
     let service: ScheduleAppointmentServiceable
-    var scheduleRequest: ScheduleAppointmentRequest
-
     
     //MARK: Init
-    init(service: ScheduleAppointmentServiceable, 
-         scheduleRequest: ScheduleAppointmentRequest) {
+    init(service: ScheduleAppointmentServiceable) {
         self.service = service
-        self.scheduleRequest = scheduleRequest
     }
     
     //MARK: Init
-    func scheduleAppointment() async throws -> ScheduleAppointmentResponse? {
-        let result = try await service.scheduleAppointment(scheduleAppointment: scheduleRequest)
+    func scheduleAppointment(specialistID: String,
+                             patientID: String,
+                             date: String) async throws -> ScheduleAppointmentResponse? {
+        let patientId = auth.patientId ?? ""
+        let result = try await service.scheduleAppointment(scheduleAppointment: .init(specialistID: specialistID, 
+                                                                                      patientID: patientId,
+                                                                                      date: date))
         
         switch result {
         case .success(let model):
