@@ -23,9 +23,9 @@ enum APIError: Error {
         case .decodingFailed:
             return "Erro de decodificação"
         case .anauthorized:
-            return "sessão expirada"
+            return "Sessão expirada"
         default:
-            return ""
+            return "Erro Desconhecido"
         }
     }
 }

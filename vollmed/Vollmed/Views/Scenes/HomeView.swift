@@ -37,7 +37,8 @@ struct HomeView: View {
                     guard let response = try await viewModel.getSpecialist() else { return }
                     self.specialists = response
                 } catch {
-                    print(error.localizedDescription)
+                    if let error = error as? APIError {
+                        print(error.customMessage)                    }
                 }
                 
             }

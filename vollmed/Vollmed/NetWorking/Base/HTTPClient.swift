@@ -13,16 +13,23 @@ protocol HTTPClient {
 
 extension HTTPClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type?) async -> Result<T?, APIError> {
-        var urlComponents = URLComponents()
+//        var urlComponents = URLComponents()
+//        
+//        urlComponents.scheme = endpoint.scheme
+//        urlComponents.host = endpoint.host
+//        urlComponents.path = endpoint.path
+//        urlComponents.port = 3000
         
-        urlComponents.scheme = endpoint.scheme
-        urlComponents.host = endpoint.host
-        urlComponents.path = endpoint.path
-        urlComponents.port = 3000
+        let urlApiary = "https://private-5f4c5f-vollmed2.apiary-mock.com/specialists"
         
-        guard let url = urlComponents.url else {
+//        guard let url = urlComponents.url else {
+//            return .failure(.invalidURL)
+//        }
+        
+        guard let url = URL(string: urlApiary) else {
             return .failure(.invalidURL)
         }
+        
         var request = URLRequest(url: url)
         request.httpMethod = endpoint.method.rawValue
         request.allHTTPHeaderFields = endpoint.header
@@ -51,6 +58,9 @@ extension HTTPClient {
                 }
                 
                 return .success(decodedResponse)
+            case 400:
+                print(data.toString())
+                return.failure(.imageNil)
             case 401:
                 return .failure(.anauthorized)
             default:
