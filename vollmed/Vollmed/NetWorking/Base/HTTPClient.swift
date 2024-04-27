@@ -59,8 +59,7 @@ extension HTTPClient {
                 
                 return .success(decodedResponse)
             case 400:
-                print(data.toString())
-                return.failure(.imageNil)
+                return .failure(.custom(data.convertToDictionary()))
             case 401:
                 return .failure(.anauthorized)
             default:

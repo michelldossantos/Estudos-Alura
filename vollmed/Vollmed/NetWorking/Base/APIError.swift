@@ -24,6 +24,11 @@ enum APIError: Error {
             return "Erro de decodificação"
         case .anauthorized:
             return "Sessão expirada"
+        case .custom(let error):
+            if let error: ErrorResponse = error.decode() {
+                return error.error.message
+            }
+            return "Ops Ocorreu um erro ao carregar as informações"
         default:
             return "Erro Desconhecido"
         }
