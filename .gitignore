@@ -1,4 +1,37 @@
-
 ProjetoAluraUiKIT/.DS_Store
-*.xcuserdatad/xcdebugger/*.xcuserstate
+*.xcuserdatad/*.xcdebugger
+# Arquivos de build e dependências
+build/
+DerivedData/
 
+# Logs e arquivos temporários
+*.log
+*.xcactivitylog
+*.swp
+*~Z
+
+# Arquivos gerados automaticamente
+xcuserdata/
+xcuserdata/*
+
+# Arquivos de configuração de usuário
+*.xcuserstate
+
+# Arquivos de breakpoint
+*.xcbkptlist
+
+# Arquivos de esquema de usuário
+*.xcscheme
+
+# Arquivos de arquivo pré-compilado
+*.pch
+
+# Arquivos de arquivo compilado
+*.o
+*.pyc
+*.swp
+
+# Arquivos de framework e biblioteca
+*.framework
+*.xcodeproj/project.xcworkspace/xcuserdata
+*.xcuserstate
