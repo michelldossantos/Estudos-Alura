@@ -14,4 +14,16 @@ public extension Dictionary {
         }
         return data
     }
+    
+    func decode<T: Decodable>() -> T? {
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: self)
+            let decoder = JSONDecoder()
+            let decodedObject = try decoder.decode(T.self, from: jsonData)
+            return decodedObject
+        } catch {
+            print("Error decoding object: \(error)")
+            return nil
+        }
+    }
 }
