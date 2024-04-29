@@ -5,6 +5,7 @@ struct HomeView: View {
     
     @State private var specialists: [Specialist] = []
     @State private var isShowingSnackBar = false
+    @State private var isFatchData = true
     @State private var errorMessage = ""
     
     var body: some View {
@@ -26,10 +27,15 @@ struct HomeView: View {
                         .foregroundColor(.accentColor)
                         .multilineTextAlignment(.center)
                         .padding(.vertical, 16)
-                    ForEach(specialists) { specialist in
-                        SpecialistCardView(specialist: specialist)
-                            .padding(.bottom, 8)
+                    if isFatchData {
+                        SkeletonView()
+                    } else {
+                        ForEach(specialists) { specialist in
+                            SpecialistCardView(specialist: specialist)
+                                .padding(.bottom, 8)
+                        }
                     }
+
                 }
                 .padding(.horizontal)
             }
