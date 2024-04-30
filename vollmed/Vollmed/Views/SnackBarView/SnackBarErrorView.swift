@@ -27,7 +27,6 @@ struct SnackBarErrorView: View {
                             }
                         }
                     }
-                    .transition(.move(edge: .bottom))
             }
         }
         .frame(maxWidth: .infinity)
