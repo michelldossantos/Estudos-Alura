@@ -44,6 +44,7 @@ struct HomeView: View {
                 Task {
                     do {
                         guard let response = try await viewModel.getSpecialist() else { return }
+                        isFatchData = false
                         self.specialists = response
                     } catch {
                         isShowingSnackBar = true
